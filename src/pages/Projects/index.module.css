@@ -1,0 +1,15 @@
+.projectPageContainer {
+  padding: 0 5rem;
+}
+
+.projectPageContainer h1 {
+  font-family: CircularStd-Black;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .projectPageContainer {
+    padding: 0 2rem;
+  }
+}
