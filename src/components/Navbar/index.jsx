@@ -24,7 +24,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/">home</NavLink>
             </li>
-            <li>
+            {/* <li>
               <a target="_blank" href="https://www.linkedin.com/in/chauhanswapnil" rel="noreferrer">
                 linkedin
               </a>
@@ -33,9 +33,12 @@ const Navbar = () => {
               <a target="_blank" href="https://www.github.com/chauhanswapnil" rel="noreferrer">
                 github
               </a>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/projects">projects</NavLink>
+            </li>
+            <li>
+              <NavLink to="/playground">lox playground</NavLink>
             </li>
           </ul>
         </div>

@@ -1,0 +1,10 @@
+.editorContainer {
+  width: 70%;
+  height: 100%;
+}
+
+.editor {
+  font-size: 12;
+  background-color: var(--mainTextColor);
+  font-family: "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace";
+}
