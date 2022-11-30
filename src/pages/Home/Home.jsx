@@ -18,7 +18,12 @@ export default function Home() {
         </a> */}
       </h2>
 
-      <a href="resume link" className="resume-btn resume-btn-layered offset square">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://firebasestorage.googleapis.com/v0/b/swapnil-chauhan.appspot.com/o/Swapnil-Chauhan.pdf?alt=media&token=4cec1e01-c575-4f24-a6fa-822b5b809739"
+        className="resume-btn resume-btn-layered offset square"
+      >
         download resume
       </a>
 

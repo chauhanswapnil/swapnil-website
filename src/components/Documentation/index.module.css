@@ -1,0 +1,23 @@
+.documentationContainer {
+  margin: 5rem 5rem 0;
+}
+
+.docsHeading {
+  font-family: CircularStd-Black, sans-serif;
+  color: var(--mainTextColor);
+  margin-bottom: 3rem;
+}
+
+.docsSubHeading {
+  font-family: CircularStd-Medium, sans-serif;
+}
+
+.docsDesc {
+  font-family: CircularStd-Book, sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .documentationContainer {
+    margin: 5rem 2rem 0;
+  }
+}

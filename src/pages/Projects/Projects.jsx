@@ -22,7 +22,7 @@ const data = [
 export default function Projects() {
   return (
     <div className={styles.projectPageContainer}>
-      <h1>Featured Work</h1>
+      <h1>This page is under construction 🛠️.</h1>
       <Row>
         {data.map((project) => {
           return (

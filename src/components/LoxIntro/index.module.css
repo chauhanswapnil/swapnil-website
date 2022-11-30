@@ -1,0 +1,21 @@
+.introContainer {
+  justify-content: center;
+  margin: 2rem auto;
+  width: 70%;
+  text-align: center;
+}
+
+.introHeading {
+  font-family: CircularStd-Black, sans-serif;
+  color: var(--mainTextColor);
+}
+.introContent {
+  font-family: CircularStd-Book, sans-serif;
+  color: var(--mainTextColor);
+}
+
+@media (max-width: 1024px) {
+  .introContainer {
+    width: 90%;
+  }
+}

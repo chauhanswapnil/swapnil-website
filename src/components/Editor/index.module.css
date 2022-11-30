@@ -1,8 +1,8 @@
 .editorContainer {
-  max-height: 250px;
+  max-height: 500px;
   overflow: auto;
   margin: 2rem auto;
-  width: 50%;
+  width: 90%;
   border-radius: 1.5rem;
 }
 
@@ -10,4 +10,31 @@
   font-size: 1rem;
   background-color: var(--mainTextColor);
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+}
+.buttonsContainer {
+}
+.runButton {
+  background-color: white;
+  border: solid 2px var(--mainTextColor);
+  border-radius: 0.5rem;
+  color: var(--mainTextColor);
+  padding: 0.3rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: CircularStd-Medium, sans-serif;
+  margin: 0 1rem;
+}
+
+.runButton:hover {
+  background-color: var(--mainTextColor);
+  color: white;
+}
+.outputArea {
+  margin: 1rem auto;
+  width: 90%;
+  white-space: pre;
+  border: solid 1px var(--mainTextColor);
 }

@@ -1,22 +1,21 @@
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 
 import styles from "./index.module.css";
 
 export default function Editor() {
-  const [code, setCode] = useState(`// Printing numbers from 1 to 10
-for (var i = 1; i <= 10; i=i+1) {
-    print i;
-}`);
+  const [code, setCode] = useState(`// Hello, Welcome to the Lox Playground
+// Use this space to play around with the language.
+
+
+print "Hi, Thank you for coming to my site.";`);
   const [output, setOutput] = useState(null);
 
   const runCode = () => {
     const body = {
       code: `${code}`,
     };
-
-    fetch("http://server.swapnilchauhan.com/loxJava", {
+    fetch("https://server.swapnilchauhan.com/loxJava", {
       method: "POST",
       headers: {
         // Accept: "application/json",
@@ -46,11 +45,18 @@ for (var i = 1; i <= 10; i=i+1) {
           }}
           padding={15}
           className={styles.editor}
-          minHeight={250}
+          minHeight={500}
         />
       </div>
-      <Button onClick={runCode}>Run Code</Button>
-      {output ? <p style={{ whiteSpace: "pre" }}>{output}</p> : <></>}
+      <div className={styles.buttonsContainer}>
+        <button onClick={runCode} className={styles.runButton}>
+          Run
+        </button>
+        <a target="_blank" href="https://www.github.com/chauhanswapnil/Slox" rel="noreferrer">
+          <button className={styles.runButton}>View Source</button>
+        </a>
+      </div>
+      {output ? <p className={styles.outputArea}>{output}</p> : <></>}
     </div>
   );
 }
