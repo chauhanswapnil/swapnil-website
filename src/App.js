@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/skills" element={<Skills />}></Route>
         <Route exact path="/playground" element={<Playground />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

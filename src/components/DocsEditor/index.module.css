@@ -1,6 +1,6 @@
 .editor {
   font-size: 0.9rem;
-  background-color: var(--mainTextColor);
+  background-color: var(--editorBackgroundColor);
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
   border-radius: 1rem;
 }

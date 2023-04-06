@@ -11,8 +11,7 @@ export default function Home() {
         who loves to build products. */}
       </h1>
       <h2 className="secondaryText">
-        I love coding and have been developing apps for over 4 years. My main experience <br />
-        is in Full Stack Web and iOS Development using ReactJS, NodeJS and Swift. <br /> <br />
+        <br /> <br />
         {/* <a className="email" href="mailto:swapnilchauhan999@gmail.com">
           swapnilchauhan999@gmail.com
         </a> */}
@@ -27,8 +26,8 @@ export default function Home() {
         download resume
       </a>
 
-      <h2 className="knowMeHeading">Get to know me.</h2>
-      <div className="knowMeContainer">
+      {/* <h2 className="knowMeHeading">Get to know me.</h2> */}
+      {/* <div className="knowMeContainer">
         <div>
           <p className="knowMeText">
             I have recently graduated from my Masters in Computer Science program at the Queen Mary University of London. I have been
@@ -50,7 +49,7 @@ export default function Home() {
         <div>
           <img src={me} alt="Swapnil" className="meImage" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

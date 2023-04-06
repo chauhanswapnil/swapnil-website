@@ -8,16 +8,16 @@
 
 .editor {
   font-size: 1rem;
-  background-color: var(--mainTextColor);
+  background-color: var(--editorBackgroundColor);
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
 }
 .buttonsContainer {
 }
 .runButton {
-  background-color: white;
+  background-color: var(--mainTextColor);
   border: solid 2px var(--mainTextColor);
   border-radius: 0.5rem;
-  color: var(--mainTextColor);
+  color: var(--secondaryTextColor);
   padding: 0.3rem 2rem;
   text-align: center;
   text-decoration: none;
@@ -29,7 +29,7 @@
 }
 
 .runButton:hover {
-  background-color: var(--mainTextColor);
+  background-color: var(--editorBackgroundColor);
   color: white;
 }
 .outputArea {
@@ -37,4 +37,5 @@
   width: 90%;
   white-space: pre;
   border: solid 1px var(--mainTextColor);
+  color: var(--mainTextColor);
 }
