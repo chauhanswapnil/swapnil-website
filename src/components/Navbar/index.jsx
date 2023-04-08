@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className={styles.navbarCustom}>
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <h1>Swapnil Chauhan</h1>
+          <h1><a href="/" style={{color: "inherit", textDecoration: "none"}}>Swapnil Chauhan</a></h1>
         </div>
       </div>
     </nav>

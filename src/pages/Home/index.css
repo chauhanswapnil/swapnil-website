@@ -3,7 +3,7 @@
 }
 
 .mainText {
-  margin-top: 8rem;
+  margin-top: 5rem;
   font-family: CircularStd-Medium;
   font-size: 1.8rem;
   margin-right: 1rem;
@@ -16,21 +16,6 @@
   font-weight: normal;
 }
 
-.email {
-  /* margin: 0 1rem; */
-  color: var(--mainTextColor);
-  text-decoration: none;
-  font-family: CircularStd-Book;
-  text-decoration: underline;
-}
-
-/* .resume-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  border: solid 2px var(--mainTextColor);
-  color: var(--mainTextColor);
-  padding: 1rem 3rem;
-} */
 .square {
   border-radius: 0 !important;
 }
@@ -77,44 +62,22 @@
   color: var(--mainTextColor);
 }
 
-.email:hover {
-}
 
-.knowMeHeading {
-  margin-top: 16rem;
+
+.headings {
   font-family: CircularStd-Medium;
   font-size: 1.8rem;
   margin-right: 1rem;
   max-width: 29rem;
 }
 
-.knowMeContainer {
-  display: flex;
-  align-items: center;
-}
-.knowMeText {
-  font-family: CircularStd-Book;
-  /* max-width: 70%; */
-  text-align: justify;
-}
-
-.meImage {
-  width: 20rem;
-  border-radius: 2rem;
-  margin-left: 2rem;
+.sections {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 @media only screen and (max-width: 1024px) {
   .mainContainer {
     padding: 0 2rem;
-  }
-  .knowMeContainer {
-    display: block;
-    align-items: center;
-    text-align: center;
-  }
-  .meImage {
-    width: 15rem;
-    margin-left: 0rem;
   }
 }

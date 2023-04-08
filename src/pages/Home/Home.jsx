@@ -1,21 +1,12 @@
 import "./index.css";
 
-import me from "../../images/me.jpg";
-
+import {Link} from "react-router-dom/"
 export default function Home() {
   return (
     <div className="mainContainer">
       <h1 className="mainText">
         Hey, I'm Swapnil - A Software Engineer from London
-        {/* <br />
-        who loves to build products. */}
       </h1>
-      <h2 className="secondaryText">
-        <br /> <br />
-        {/* <a className="email" href="mailto:swapnilchauhan999@gmail.com">
-          swapnilchauhan999@gmail.com
-        </a> */}
-      </h2>
 
       <a
         target="_blank"
@@ -25,31 +16,25 @@ export default function Home() {
       >
         download resume
       </a>
+      
+      <div className="sections">
+        <h2 className="headings">I write sometimes</h2>
+        <ul>
+          <li>
+            <Link to="/blog/titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle" style={{color:"inherit"}}>
+            Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle.
+            </Link>
+            </li>
+          <li>
+          <Link to="/blog/guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift" style={{color:"inherit"}}>
+            Guidelines, Roadmap and Resources for beginner to advanced iOS app development using Swift
+          </Link></li>
+        </ul>
+      </div>
 
-      {/* <h2 className="knowMeHeading">Get to know me.</h2> */}
-      {/* <div className="knowMeContainer">
-        <div>
-          <p className="knowMeText">
-            I have recently graduated from my Masters in Computer Science program at the Queen Mary University of London. I have been
-            programming in a variety of languages since I was in 6th grade. My passion for programming and motivation is fuelled by the
-            prospect of making things which would be used by people around the world. <br />
-            <br />I worked as a Data Science Project Intern at Teragence Ltd, London to improve their existing naïve signal estimator
-            algorithms to smart AI/ML- based estimation workflow. I am using technologies like QGIS, Python (Data Analysis libraries like
-            Numpy, Pandas, PyTorch, etc), Docker, Kubernetes and ReactJS. <br />
-            <br />I previously worked in a startup as a Software Engineer, using technologies like Swift, Python, NodeJS, ReactJS, Git,
-            Amazon Web Services, SQL, Firebase and Linux. Some of the projects I worked on are aarjaychairs.com, the Before Visit app, and
-            Momma's Kitchen app. Aside from professional work, I am also motivated to work on personal projects. Some of the projects
-            include a few iOS Apps that I have published, contributions to Stack Overflow, a portfolio website and a Raspberry PI home NAS
-            server that I have deployed. I also constantly participate in a variety of online coding competitions like Google Kickstart,
-            Google CodeJam, CodeChef, Hackerrank, Leetcode and HackerEarth to improve my coding and problem-solving skills. My will to work
-            hard and my passion for technology will ensure that if given the opportunity, I will exceed all expectations. Looking forward to
-            hearing back from you.
-          </p>
-        </div>
-        <div>
-          <img src={me} alt="Swapnil" className="meImage" />
-        </div>
-      </div> */}
+      <h2 className="headings">
+      <Link to="/playground" style={{color:"inherit"}}>Lox Playground</Link></h2>
+      <p>Check out Lox playground which is an online repl for the interpreter I made in Java for Lox Language.</p>      
     </div>
   );
 }
