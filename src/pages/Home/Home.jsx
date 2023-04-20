@@ -29,6 +29,11 @@ export default function Home() {
           <Link to="/blog/guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift" style={{color:"inherit"}}>
             Guidelines, Roadmap and Resources for beginner to advanced iOS app development using Swift
           </Link></li>
+          <li>
+            <Link to="/blog/how-programming-languages-make-sense-of-language" style={{color:"inherit"}}>
+              How programming languages make sense of language?
+            </Link>
+          </li>
         </ul>
       </div>
 

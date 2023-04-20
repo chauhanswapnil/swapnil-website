@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import styles from "./index.module.css";
 import titanic from "../../blogmd/titanic.md";
 import beginios from "../../blogmd/beginios.md";
+import languages from "../../blogmd/languages.md";
 import { useEffect, useState } from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneLight} from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -18,6 +19,10 @@ const blogs =
     "guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift": {
       "medium_link": "", 
       md_file: beginios
+    },
+    "how-programming-languages-make-sense-of-language": {
+      "medium_link": "",
+      md_file: languages
     }
   }
 
