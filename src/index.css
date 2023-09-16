@@ -14,10 +14,10 @@
 }
 
 :root {
-  --mainTextColor: #fff;
+  --mainTextColor: rgba(254,254,254,0.9);
   --secondaryTextColor: #212529;
   --editorBackgroundColor: #181a19;
-  --backgroundColor: #212529;
+  --backgroundColor: rgba(22,22,22,1);
 }
 
 body {
