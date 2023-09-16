@@ -4,16 +4,15 @@
 }
 
 .docsHeading {
-  font-family: CircularStd-Black, sans-serif;
   margin-bottom: 3rem;
 }
 
 .docsSubHeading {
-  font-family: CircularStd-Medium, sans-serif;
+  font-family: 'CircularStd-Medium', sans-serif;
 }
 
 .docsDesc {
-  font-family: CircularStd-Book, sans-serif;
+  font-family: 'CircularStd-Book', sans-serif;
 }
 
 @media (max-width: 1024px) {

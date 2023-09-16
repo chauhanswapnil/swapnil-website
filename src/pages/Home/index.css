@@ -4,13 +4,13 @@
 
 .mainText {
   margin-top: 5rem;
-  font-family: CircularStd-Medium;
+  font-family: 'CircularStd-Medium';
   font-size: 1.8rem;
   margin-right: 1rem;
   max-width: 29rem;
 }
 .secondaryText {
-  font-family: CircularStd-Book;
+  font-family: 'CircularStd-Book';
   font-size: 0.9rem;
   margin-right: 1rem;
   font-weight: normal;
@@ -52,7 +52,7 @@
 .resume-btn-layered {
   background: none;
   border: solid 2px var(--mainTextColor);
-  font-family: CircularStd, sans-serif !important;
+  font-family: 'CircularStd-Black', sans-serif !important;
   font-size: 10pt;
   font-weight: 500;
   line-height: 1;
@@ -65,7 +65,7 @@
 
 
 .headings {
-  font-family: CircularStd-Medium;
+  font-family: 'CircularStd-Medium';
   font-size: 1.8rem;
   margin-right: 1rem;
   max-width: 29rem;
