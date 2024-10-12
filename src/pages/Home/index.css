@@ -1,6 +1,12 @@
 .mainContainer {
   padding: 0 5rem;
+  max-width: 75%;
+  margin: 0 auto;
 }
+
+.contentContainer {
+}
+
 
 .mainText {
   margin-top: 5rem;
@@ -10,10 +16,11 @@
   max-width: 29rem;
 }
 .secondaryText {
+  margin-top: 4rem;
   font-family: 'CircularStd-Book';
-  font-size: 0.9rem;
-  margin-right: 1rem;
+  font-size: 1.1rem;
   font-weight: normal;
+  text-align: justify;
 }
 
 .square {
@@ -62,22 +69,25 @@
   color: var(--mainTextColor);
 }
 
-
+.loxContainer {
+  margin-top: 3rem;
+}
 
 .headings {
   font-family: 'CircularStd-Medium';
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-right: 1rem;
   max-width: 29rem;
 }
 
 .sections {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 5rem;
 }
 
 @media only screen and (max-width: 1024px) {
   .mainContainer {
     padding: 0 2rem;
+      max-width: 90%;
   }
 }
