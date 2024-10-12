@@ -1,6 +1,8 @@
 .mainContainer {
     padding: 0 5rem;
     font-family: 'CircularStd-Medium';
+    margin: 0 auto;
+    max-width: 75%
   }
 .blogContainer {
   margin-top: 2rem;
@@ -9,5 +11,6 @@
 @media only screen and (max-width: 1024px) {
   .mainContainer {
     padding: 0 2rem;
+    max-width: 90%;
   }
 }

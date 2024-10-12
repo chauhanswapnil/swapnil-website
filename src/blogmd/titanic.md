@@ -1,6 +1,6 @@
 # Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle.
 
-Jun 26, 2021 
+June 26, 2021 
 
 ### Setting up Kaggle with Google Colab and uploading the predictions directly from the notebook
 
