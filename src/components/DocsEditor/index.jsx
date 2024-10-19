@@ -1,5 +1,4 @@
 import CodeEditor from "@uiw/react-textarea-code-editor";
-// import { useState } from "react";
 
 import styles from "./index.module.css";
 

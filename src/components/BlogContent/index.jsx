@@ -3,9 +3,10 @@ import ReactMarkdown from 'react-markdown'
 import styles from "./index.module.css";
 import titanic from "../../blogmd/titanic.md";
 import beginios from "../../blogmd/beginios.md";
+import procrastination from "../../blogmd/procrastination.md";
 import { useEffect, useState } from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {oneLight} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {oneDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { useParams } from 'react-router-dom';
 
 const blogs = 
@@ -18,6 +19,10 @@ const blogs =
     "guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift": {
       "medium_link": "", 
       md_file: beginios
+    },
+    "procrastination-and-the-fear-of-not-being-good-enough": {
+      "medium_link": "", 
+      md_file: procrastination
     }
   }
 
@@ -52,28 +57,48 @@ export default function BlogContent(props) {
     if (md === "") {
       return <h1>Invalid blog title!</h1>
     }
-    return <ReactMarkdown
-    children={md}
-    components={{
-      code({node, inline, className, children, ...props}) {
-        const match = /language-(\w+)/.exec(className || '')
-        return !inline && match ? (
-          <SyntaxHighlighter
-            {...props}
-            children={String(children).replace(/\n$/, '')}
-            style={oneLight}
-            language={match[1]}
-            PreTag="div"
-          />
-        ) : (
-          <code {...props} className={className}>
-            {children}
-          </code>
-      )
-    }
-  }}
-/>
-  }
+
+    return (
+      <ReactMarkdown
+        children={md}
+        components={{
+          p({ node, children, ...props }) {
+            // Check if the paragraph contains a non-breaking space
+            const hasNbsp = children.some((child) => {
+              if (typeof child === 'string' && child.includes('\u00A0')) {
+                return true;
+              }
+              return false;
+            });
+            // Apply custom styles if &nbsp; is present
+            const customStyle = hasNbsp ? { margin: '0' } : {};
+            return (
+              <p style={customStyle} {...props}>
+                {children}
+              </p>
+            );
+          },
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '');
+            return !inline && match ? (
+              <SyntaxHighlighter
+                {...props}
+                children={String(children).replace(/\n$/, '')}
+                style={oneDark}
+                language={match[1]}
+                PreTag="div"
+              />
+            ) : (
+              <code {...props} className={className}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      />
+    );
+  };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.blogContainer}>
