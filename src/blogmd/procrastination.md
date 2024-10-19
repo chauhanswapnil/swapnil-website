@@ -1,8 +1,8 @@
-# Procrastination and the Fear of Not Being “Good Enough”
+# Procrastination and the Fear of Not Being 'Good Enough'
 ----
 Jun 19, 2024
 
-> “I want to read and write more.” 
+> "I want to read and write more."
 
 That thought has echoed in my mind for the past two years. Yet, as you can see from my sparse blog posts, I haven’t done much of either. While I do read articles here and there, it’s far less than I should. And writing? Well, it’s been even longer since I put pen to paper-or fingers to keyboard in my case. I’ve finally decided to change that, and it only makes sense to start by writing about *why* I haven’t been writing, and how I plan to fix it.
 
@@ -22,6 +22,6 @@ This ties into my fear of not being good enough. I’m constantly worried about 
 But I’ve realized that this too has to change. I’ll never get anywhere if I’m paralyzed by the fear of what others might think. It’s time to put that aside and focus on my own growth. The only way forward is through action.
 
 &nbsp;  
-##### **Moving Forward..**
+##### ***Moving Forward..***
 
 I’ve finally pushed through most of my internal blocks, and I’m ready to make a real effort to improve. Expect to see more writing from me soon—whether it’s good or not, I’ll keep at it.
