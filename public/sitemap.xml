@@ -1,20 +1,17 @@
-<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>https://swapnilchauhan.com/</loc></url>
-<url><loc>https://swapnilchauhan.com/playground</loc></url>
-<url><loc>https://swapnilchauhan.com/projects</loc></url>
-<url><loc>https://swapnilchauhan.com/resume%25252520link</loc></url>
-
-<url><loc>https://www.swapnilchauhan.com/</loc></url>
-<url><loc>https://www.swapnilchauhan.com/playground</loc></url>
-<url><loc>https://www.swapnilchauhan.com/projects</loc></url>
-<url><loc>https://www.swapnilchauhan.com/resume%25252520link</loc></url>
-
-<url><loc>http://swapnilchauhan.com/</loc></url>
-<url><loc>http://swapnilchauhan.com/playground</loc></url>
-<url><loc>http://swapnilchauhan.com/projects</loc></url>
-<url><loc>http://swapnilchauhan.com/resume%25252520link</loc></url>
-
-<url><loc>www.swapnilchauhan.com/</loc></url>
-<url><loc>www.swapnilchauhan.com/playground</loc></url>
-<url><loc>www.swapnilchauhan.com/projects</loc></url>
-<url><loc>www.swapnilchauhan.com/resume%25252520link</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://swapnilchauhan.com/</loc>
+</url>
+<url>
+<loc>https://swapnilchauhan.com/blog/guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift</loc>
+</url>
+<url>
+<loc>https://swapnilchauhan.com/blog/procrastination-and-the-fear-of-not-being-good-enough</loc>
+</url>
+<url>
+<loc>https://swapnilchauhan.com/blog/titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle</loc>
+</url>
+<url>
+<loc>https://swapnilchauhan.com/playground</loc>
+</url>
+</urlset>
