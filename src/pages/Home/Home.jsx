@@ -33,7 +33,7 @@ export default function Home() {
         <div className="sections">
           <h2 className="headings">I write sometimes</h2>
           <BlogPreview 
-            date="June 19, 2024" 
+            date="October 19, 2024" 
             title="Procrastination and the Fear of Not Being 'Good Enough'"
             previewText={`> "I want to read and write more."\n\nThat thought has echoed in my mind for the past two years. Yet, as you can see from my sparse blog posts, I haven’t done much of either. While I do read articles here and there, it’s far less than I should. And writing? Well, it’s been even longer since I put pen to paper—or fingers to keyboard in my case...`} 
             linkText="/blog/procrastination-and-the-fear-of-not-being-good-enough"

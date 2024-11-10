@@ -1,6 +1,6 @@
 # Procrastination and the Fear of Not Being 'Good Enough'
 ----
-Jun 19, 2024
+October 19, 2024
 
 > "I want to read and write more."
 
