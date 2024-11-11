@@ -25,3 +25,6 @@ But I’ve realized that this too has to change. I’ll never get anywhere if I�
 ##### ***Moving Forward..***
 
 I’ve finally pushed through most of my internal blocks, and I’m ready to make a real effort to improve. Expect to see more writing from me soon—whether it’s good or not, I’ll keep at it.
+
+---
+UPDATE (November 11, 2024): It seems a lot of people feel in a similar way and this was reflected in this amazing discussion about the blog on [Hacker News](https://news.ycombinator.com/item?id=42101327).

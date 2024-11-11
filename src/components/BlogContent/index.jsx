@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import titanic from "../../blogmd/titanic.md";
 import beginios from "../../blogmd/beginios.md";
 import procrastination from "../../blogmd/procrastination.md";
+import dns_resolver_part_1 from "../../blogmd/recursive-dns-resolver-part-1.md";
 import { useEffect, useState } from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -23,7 +24,11 @@ const blogs =
     "procrastination-and-the-fear-of-not-being-good-enough": {
       "medium_link": "", 
       md_file: procrastination
-    }
+    },
+    "recursive-dns-resolver-part-1" : {
+      "medium_link": "", 
+      md_file: dns_resolver_part_1
+    },
   }
 
 function getFile(fromTitle) {

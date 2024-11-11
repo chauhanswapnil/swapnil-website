@@ -33,6 +33,13 @@ export default function Home() {
         <div className="sections">
           <h2 className="headings">I write sometimes</h2>
           <BlogPreview 
+            date="November 11, 2024" 
+            title="Pickel DNS - A Recursive DNS Resolver in Rust (Part 1)"
+            previewText={`What is DNS?\nDNS or Domain Name System is a mapping of human-readable domain names to machine IP addresses. DNS works by having servers that does DNS lookups or DNS resolving which essentially means looking up the IP from a server that knows about it.\nIn resolving a domain name from when a user types [google.com](http://google.com/) in their browser to the browser loading that page, there are 4 DNS servers involved...`} 
+            linkText="/blog/recursive-dns-resolver-part-1"
+          />
+
+          <BlogPreview 
             date="October 19, 2024" 
             title="Procrastination and the Fear of Not Being 'Good Enough'"
             previewText={`> "I want to read and write more."\n\nThat thought has echoed in my mind for the past two years. Yet, as you can see from my sparse blog posts, I haven’t done much of either. While I do read articles here and there, it’s far less than I should. And writing? Well, it’s been even longer since I put pen to paper—or fingers to keyboard in my case...`} 
