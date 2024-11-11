@@ -24,3 +24,48 @@
 	text-align: center;
 	display: block;
 }
+
+/* Reset all link styles first */
+.blogLink,
+.blogLink:link,
+.blogLink:visited,
+.blogLink:hover,
+.blogLink:active {
+  color: #87CEEB !important; /* Added !important to override browser defaults */
+  text-decoration: none !important;  /* Removes default underline */
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.blogLink:hover {
+  color: #ADD8E6 !important; /* Added !important to override browser defaults */
+  text-decoration: none !important;
+}
+
+/* Underline animation */
+.blogLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: white; /* Changed to white */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.blogLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mainContainer {
+    padding: 0 2rem;
+      max-width: 90%;
+  }
+}
+

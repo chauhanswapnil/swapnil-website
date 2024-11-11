@@ -85,9 +85,15 @@
   margin-bottom: 5rem;
 }
 
-@media only screen and (max-width: 1024px) {
-  .mainContainer {
-    padding: 0 2rem;
-      max-width: 90%;
-  }
+/* Reset all link styles first */
+.blogLink,
+.blogLink:link,
+.blogLink:visited,
+.blogLink:hover,
+.blogLink:active {
+  color: #87CEEB;
+  text-decoration: none;  /* Removes default underline */
+  position: relative;
+  transition: color 0.2s ease-in-out;
 }
+

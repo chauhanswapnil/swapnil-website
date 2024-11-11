@@ -1,0 +1,35 @@
+.footerCustom {
+  height: 30px;
+  position: relative;
+  border-top: solid var(--mainTextColor);
+  font-family: 'CircularStd-Book';
+}
+
+.socialLinks {
+  justify-content: center;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.socialLink:hover {
+  color: #ADD8E6 !important;
+}
+
+.socialLink svg {
+  width: 18px;
+  height: 18px;
+}

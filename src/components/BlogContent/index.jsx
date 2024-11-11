@@ -99,6 +99,13 @@ export default function BlogContent(props) {
               </code>
             );
           },
+          a({ node, children, ...props }) {
+          return (
+            <a className={styles.blogLink} {...props}>
+              {children}
+            </a>
+          );
+        },
         }}
       />
     );

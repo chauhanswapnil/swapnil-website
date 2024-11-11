@@ -33,7 +33,7 @@ Ah yes, I have some upcoming things at work which involves DNS related stuff. So
 
 The thought of playing with raw network packets while managing recursive queries as well implementing caching to make a high performance application… that sounds like a project meant to be written in Rust, and so I ran the trusty cargo command.
 
-```rust
+```bash
 cargo new pickle-dns --bin
 ```
 
@@ -49,4 +49,4 @@ Woohoo, I have another new empty project in my directory (graveyard) of projects
 - Implement some sort of caching for faster lookups.
 
 
-According to the above plan, I have made some progression on points 1 and 2. Can be found on GitHub here [Pickle DNS](https://github.com/chauhanswapnil/pickle-dns). The next part will be on capturing DNS packets and understanding their structure.
+According to the above plan, I have made some progression on points 1 and 2. Can be found on GitHub at [Pickle DNS](https://github.com/chauhanswapnil/pickle-dns). The next part of this mini series will be on capturing DNS packets and understanding their structure.
