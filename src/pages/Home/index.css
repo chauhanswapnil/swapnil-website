@@ -97,3 +97,11 @@
   transition: color 0.2s ease-in-out;
 }
 
+@media only screen and (max-width: 1024px) {
+  .mainContainer {
+  padding: 0 1rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+}

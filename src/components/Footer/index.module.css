@@ -13,7 +13,6 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .socialLink {
@@ -33,3 +32,23 @@
   width: 18px;
   height: 18px;
 }
+
+
+@media only screen and (max-width: 1024px) {
+.footerCustom {
+    text-align: center;
+}
+
+.socialLinks {
+  justify-content: center;
+  display: inline-block;
+    margin-bottom: 0rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+}
+
+}
+
