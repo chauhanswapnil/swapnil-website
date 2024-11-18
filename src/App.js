@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/blog/:title" element={<Blog />}></Route>
         {/* <Route exact path="/skills" element={<Skills />}></Route> */}
         <Route exact path="/playground" element={<Playground />}></Route>
+        <Route path="*" element={<Navigate to="/" />} /> {/* Catch-all route */}
       </Routes>
       <Footer />
     </div>
