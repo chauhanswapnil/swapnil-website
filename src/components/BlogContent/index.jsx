@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import titanic from "../../blogmd/titanic.md";
 import beginios from "../../blogmd/beginios.md";
 import procrastination from "../../blogmd/procrastination.md";
+import plateauing from "../../blogmd/plateauing.md";
 import dns_resolver_part_1 from "../../blogmd/recursive-dns-resolver-part-1.md";
 import { useEffect, useState } from 'react';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
@@ -37,6 +38,12 @@ const blogs =
       md_file: dns_resolver_part_1,
       "title": "Pickel DNS - A Recursive DNS Resolver in Rust (Part 1)",
       "description": "What is DNS? DNS or Domain Name System is a mapping of human-readable domain names to machine IP addresses. DNS works by having servers that does DNS lookups or DNS resolving which essentially means looking up the IP from a server that knows about it. In resolving a domain name from when a user types [google.com](http://google.com/) in their browser to the browser loading that page, there are 4 DNS servers involved..."
+    },
+    "plateauing" : {
+      "medium_link": "", 
+      md_file: plateauing,
+      "title": "Plateauing",
+      "description": "It’s strange how time seems to slip through your fingers the older you get. When I look back, it feels like yesterday when I was graduating with my bachelor’s degree, packing my bags to move to the UK, finishing my master’s, and finally landing my first job. That job was such a milestone, I can still remember the adrenaline of getting the offer, the sense of relief after so many months of grinding, and the excitement of opening my laptop to work for the first time..."
     },
   }
 

@@ -29,11 +29,18 @@ export default function Home() {
         <p>Check out Lox playground which is an online repl for the interpreter I made in Java for Lox Language.</p>      
         </div>
 
-        
+
         <div className="sections">
           <h2 className="headings">I write sometimes</h2>
           <BlogPreview 
-            date="November 11, 2024" 
+            date="August 16, 2025"
+            title="Plateauing"
+            previewText={`It’s strange how time seems to slip through your fingers the older you get. When I look back, it feels like yesterday when I was graduating with my bachelor’s degree, packing my bags to move to the UK, finishing my master’s, and finally landing my first job. That job was such a milestone, I can still remember the adrenaline of getting the offer, the sense of relief after so many months of grinding, and the excitement of opening...`} 
+            linkText="/blog/plateauing"
+          />
+
+          <BlogPreview 
+            date="November 11, 2024"
             title="Pickel DNS - A Recursive DNS Resolver in Rust (Part 1)"
             previewText={`What is DNS?\nDNS or Domain Name System is a mapping of human-readable domain names to machine IP addresses. DNS works by having servers that does DNS lookups or DNS resolving which essentially means looking up the IP from a server that knows about it.\nIn resolving a domain name from when a user types [google.com](http://google.com/) in their browser to the browser loading that page, there are 4 DNS servers involved...`} 
             linkText="/blog/recursive-dns-resolver-part-1"
@@ -47,7 +54,7 @@ export default function Home() {
           />
 
           <BlogPreview 
-            date="June 26, 2021" 
+            date="June 26, 2021"
             title="Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle."
             previewText={`Setting up Kaggle with Google Colab and uploading the predictions directly from the notebook.\n\n In this tutorial we will be making a Deep Learning binary classification neural network model using Tensorflow and train it on the Titanic Disaster Dataset from Kaggle Competitions. We will also look at how to connect Google Colab with Kaggle so that you can do things like...`}
             linkText="/blog/titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle"/>
