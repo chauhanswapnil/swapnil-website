@@ -45,7 +45,7 @@
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   border: 1px solid var(--borderSubtle);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--tagBackground);
   color: var(--mainTextColor);
   font-size: 0.9rem;
 }

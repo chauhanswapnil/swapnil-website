@@ -18,6 +18,7 @@
   --secondaryTextColor: #212529;
   --editorBackgroundColor: #181a19;
   --backgroundColor: rgba(30, 39, 50, 1);
+  --surfaceColor: #232d3a;
   --mutedTextColor: rgba(254, 254, 254, 0.7);
   --softTextColor: rgba(254, 254, 254, 0.82);
   --subtleSurface: rgba(255, 255, 255, 0.02);
@@ -27,12 +28,37 @@
   --borderStrongHover: rgba(255, 255, 255, 0.75);
   --accentColor: #87ceeb;
   --accentColorHover: #add8e6;
+  --buttonTextColor: #212529;
+  --blockquoteBorderColor: rgba(255, 255, 255, 0.35);
+  --inlineCodeBackground: rgba(255, 255, 255, 0.08);
+  --tagBackground: rgba(255, 255, 255, 0.04);
   --pageWidth: 75%;
   --pagePadding: 5rem;
   --pageWidthMobile: 90%;
   --pagePaddingMobile: 1rem;
   --radiusCard: 0.75rem;
   --radiusMedia: 0.9rem;
+}
+
+html[data-theme="light"] {
+  --mainTextColor: rgba(24, 32, 42, 0.92);
+  --secondaryTextColor: #f5f2e8;
+  --editorBackgroundColor: #f3efe6;
+  --backgroundColor: #f7f3eb;
+  --surfaceColor: #fffdf8;
+  --mutedTextColor: rgba(24, 32, 42, 0.64);
+  --softTextColor: rgba(24, 32, 42, 0.8);
+  --subtleSurface: rgba(28, 35, 48, 0.03);
+  --subtleSurfaceHover: rgba(28, 35, 48, 0.06);
+  --borderSubtle: rgba(28, 35, 48, 0.12);
+  --borderStrong: rgba(28, 35, 48, 0.25);
+  --borderStrongHover: rgba(28, 35, 48, 0.38);
+  --accentColor: #116d8a;
+  --accentColorHover: #0b5970;
+  --buttonTextColor: #f7f3eb;
+  --blockquoteBorderColor: rgba(28, 35, 48, 0.22);
+  --inlineCodeBackground: rgba(28, 35, 48, 0.08);
+  --tagBackground: rgba(28, 35, 48, 0.06);
 }
 
 * {
@@ -51,6 +77,11 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accentColor);
+  color: var(--secondaryTextColor);
 }
 
 code {

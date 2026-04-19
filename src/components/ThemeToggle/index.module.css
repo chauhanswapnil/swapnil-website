@@ -1,0 +1,41 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--borderSubtle);
+  background: var(--subtleSurface);
+  color: var(--mainTextColor);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.toggle:hover {
+  border-color: var(--borderStrongHover);
+  background: var(--subtleSurfaceHover);
+}
+
+.icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.label {
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .label {
+    display: none;
+  }
+
+  .toggle {
+    padding: 0.5rem 0.65rem;
+  }
+}

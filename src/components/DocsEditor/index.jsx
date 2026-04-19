@@ -11,7 +11,6 @@ export default function DocsEditor({ code }) {
   return (
     <div>
       <CodeEditor
-        data-color-mode="dark"
         value={code}
         language="java"
         padding={12}

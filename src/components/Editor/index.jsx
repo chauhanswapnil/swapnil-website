@@ -39,7 +39,6 @@ print "Hi, Thank you for coming to my site.";`);
     <div className="text-center">
       <div className={styles.editorContainer}>
         <CodeEditor
-          data-color-mode="dark"
           value={code}
           language="java"
           placeholder="Please enter Lox code."

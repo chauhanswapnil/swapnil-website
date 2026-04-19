@@ -9,9 +9,10 @@
   font-family: "CircularStd-Black", sans-serif;
   color: var(--mainTextColor);
 }
+
 .introContent {
   font-family: "CircularStd-Book", sans-serif;
-  color: var(--mainTextColor);
+  color: var(--softTextColor);
 }
 
 @media (max-width: 1024px) {
