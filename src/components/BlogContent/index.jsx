@@ -1,8 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import TrackedLink from "../TrackedLink";
 import styles from "./index.module.css";
 
 export default function BlogContent({ post }) {
@@ -11,9 +11,19 @@ export default function BlogContent({ post }) {
       <div className={styles.blogContainer}>
         <header className={styles.blogHeader}>
           <p className={styles.backLinkWrapper}>
-            <Link className="accentLink" href="/blog">
+            <TrackedLink
+              className="accentLink"
+              href="/blog"
+              eventName="content_link_click"
+              eventParams={{
+                location: "blog_article",
+                link_type: "back_to_blog",
+                slug: post.slug,
+                target_url: "/blog",
+              }}
+            >
               Back to all posts
-            </Link>
+            </TrackedLink>
           </p>
           <p className={styles.blogMeta}>{post.dateLabel}</p>
           <h1 className={styles.blogTitle}>{post.title}</h1>
@@ -37,22 +47,38 @@ export default function BlogContent({ post }) {
 
               if (!isExternal && href.startsWith("/")) {
                 return (
-                  <Link className="accentLink" href={href}>
+                  <TrackedLink
+                    className="accentLink"
+                    href={href}
+                    eventName="content_link_click"
+                    eventParams={{
+                      location: "blog_article",
+                      link_type: "internal",
+                      slug: post.slug,
+                      target_url: href,
+                    }}
+                  >
                     {children}
-                  </Link>
+                  </TrackedLink>
                 );
               }
 
               return (
-                <a
+                <TrackedLink
                   className="accentLink"
                   href={href}
-                  rel="noreferrer"
-                  target="_blank"
+                  external
+                  eventName="content_link_click"
+                  eventParams={{
+                    location: "blog_article",
+                    link_type: "external",
+                    slug: post.slug,
+                    target_url: href,
+                  }}
                   {...props}
                 >
                   {children}
-                </a>
+                </TrackedLink>
               );
             },
             code({ inline, className, children, ...props }) {

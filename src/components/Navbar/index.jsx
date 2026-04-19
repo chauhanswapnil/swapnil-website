@@ -1,5 +1,5 @@
-import Link from "next/link";
 import ThemeToggle from "../ThemeToggle";
+import TrackedLink from "../TrackedLink";
 import styles from "./index.module.css";
 
 const Navbar = () => {
@@ -8,18 +8,33 @@ const Navbar = () => {
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
           <h1>
-            <Link className={styles.brandLink} href="/">
+            <TrackedLink
+              className={styles.brandLink}
+              href="/"
+              eventName="nav_link_click"
+              eventParams={{ location: "navbar", link_type: "home", target_url: "/" }}
+            >
               Swapnil Chauhan
-            </Link>
+            </TrackedLink>
           </h1>
         </div>
         <div className={styles.navLinks}>
-          <Link className={styles.navLink} href="/blog">
+          <TrackedLink
+            className={styles.navLink}
+            href="/blog"
+            eventName="nav_link_click"
+            eventParams={{ location: "navbar", link_type: "blog", target_url: "/blog" }}
+          >
             Blog
-          </Link>
-          <Link className={styles.navLink} href="/projects">
+          </TrackedLink>
+          <TrackedLink
+            className={styles.navLink}
+            href="/projects"
+            eventName="nav_link_click"
+            eventParams={{ location: "navbar", link_type: "projects", target_url: "/projects" }}
+          >
             Projects
-          </Link>
+          </TrackedLink>
           <ThemeToggle />
         </div>
       </div>
