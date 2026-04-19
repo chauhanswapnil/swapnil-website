@@ -11,7 +11,7 @@ export default function BlogContent({ post }) {
       <div className={styles.blogContainer}>
         <header className={styles.blogHeader}>
           <p className={styles.backLinkWrapper}>
-            <Link className={styles.blogLink} href="/blog">
+            <Link className="accentLink" href="/blog">
               Back to all posts
             </Link>
           </p>
@@ -37,7 +37,7 @@ export default function BlogContent({ post }) {
 
               if (!isExternal && href.startsWith("/")) {
                 return (
-                  <Link className={styles.blogLink} href={href}>
+                  <Link className="accentLink" href={href}>
                     {children}
                   </Link>
                 );
@@ -45,7 +45,7 @@ export default function BlogContent({ post }) {
 
               return (
                 <a
-                  className={styles.blogLink}
+                  className="accentLink"
                   href={href}
                   rel="noreferrer"
                   target="_blank"

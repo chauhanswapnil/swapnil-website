@@ -5,15 +5,18 @@ import CodeEditor from "@uiw/react-textarea-code-editor";
 import styles from "./index.module.css";
 
 export default function DocsEditor({ code }) {
+  const lineCount = code.split("\n").length;
+  const minHeight = Math.max(140, lineCount * 26 + 28);
+
   return (
     <div>
       <CodeEditor
+        data-color-mode="dark"
         value={code}
         language="java"
-        // placeholder="Please enter Lox code."
-        padding={15}
+        padding={12}
         className={styles.editor}
-        minHeight={200}
+        minHeight={minHeight}
         disabled={true}
       />
     </div>

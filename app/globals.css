@@ -18,6 +18,21 @@
   --secondaryTextColor: #212529;
   --editorBackgroundColor: #181a19;
   --backgroundColor: rgba(30, 39, 50, 1);
+  --mutedTextColor: rgba(254, 254, 254, 0.7);
+  --softTextColor: rgba(254, 254, 254, 0.82);
+  --subtleSurface: rgba(255, 255, 255, 0.02);
+  --subtleSurfaceHover: rgba(255, 255, 255, 0.04);
+  --borderSubtle: rgba(255, 255, 255, 0.16);
+  --borderStrong: rgba(255, 255, 255, 0.5);
+  --borderStrongHover: rgba(255, 255, 255, 0.75);
+  --accentColor: #87ceeb;
+  --accentColorHover: #add8e6;
+  --pageWidth: 75%;
+  --pagePadding: 5rem;
+  --pageWidthMobile: 90%;
+  --pagePaddingMobile: 1rem;
+  --radiusCard: 0.75rem;
+  --radiusMedia: 0.9rem;
 }
 
 * {
@@ -40,4 +55,85 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.pageShell {
+  width: min(var(--pageWidth), 100%);
+  margin: 0 auto;
+  padding-left: var(--pagePadding);
+  padding-right: var(--pagePadding);
+}
+
+.pageShellCompact {
+  width: min(var(--pageWidth), 100%);
+  margin: 0 auto;
+  padding: 0 var(--pagePadding) 3rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: 1.5rem;
+}
+
+.mutedText {
+  color: var(--mutedTextColor);
+}
+
+.softText {
+  color: var(--softTextColor);
+}
+
+.accentLink {
+  color: var(--accentColor);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.accentLink:hover {
+  color: var(--accentColorHover);
+}
+
+.accentLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.accentLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.surfaceCard {
+  border: 2px solid var(--borderStrong);
+  border-radius: var(--radiusCard);
+  background: var(--subtleSurface);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.surfaceCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--borderStrongHover);
+  background: var(--subtleSurfaceHover);
+}
+
+@media only screen and (max-width: 1024px) {
+  .pageShell,
+  .pageShellCompact {
+    width: min(var(--pageWidthMobile), 100%);
+    padding-left: var(--pagePaddingMobile);
+    padding-right: var(--pagePaddingMobile);
+  }
 }

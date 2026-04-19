@@ -1,6 +1,14 @@
 .editor {
   font-size: 0.9rem;
   background-color: var(--editorBackgroundColor);
+  color: var(--mainTextColor) !important;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
   border-radius: 1rem;
+  line-height: 1.45;
+}
+
+.editor textarea,
+.editor pre {
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
 }

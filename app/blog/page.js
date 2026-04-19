@@ -1,6 +1,6 @@
 import BlogPreview from "../../src/components/BlogPreview";
 import { getAllBlogPosts } from "../../src/content/blogs";
-import styles from "../../src/pages/BlogList/index.module.css";
+import styles from "../../src/views/blogList.module.css";
 
 export const metadata = {
   title: "Blog",
@@ -14,11 +14,11 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={`pageShell ${styles.page}`}>
       <section className={styles.hero}>
-        <p className={styles.eyebrow}>Writing</p>
+        <p className={`${styles.eyebrow} mutedText`}>Writing</p>
         <h1 className={styles.title}>Notes on engineering, learning, and life.</h1>
-        <p className={styles.description}>
+        <p className={`${styles.description} softText`}>
           A cleaner archive for the posts that used to live only on the homepage.
         </p>
       </section>

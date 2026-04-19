@@ -1,29 +1,16 @@
-.mainContainer {
-  padding: 0 5rem;
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-.contentContainer {
+.page {
+  padding-top: 0;
 }
 
 .secondaryText {
   margin-top: 4rem;
-  font-family: "CircularStd-Book";
+  font-family: "CircularStd-Book", sans-serif;
   font-size: 1.1rem;
-  font-weight: normal;
   text-align: justify;
 }
 
 .loxContainer {
   margin-top: 3rem;
-}
-
-.headings {
-  font-family: "CircularStd-Medium";
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  max-width: 29rem;
 }
 
 .sections {
@@ -40,9 +27,9 @@
 }
 
 .sectionLink {
-  color: rgba(254, 254, 254, 0.8);
+  color: var(--softTextColor);
   text-decoration: none;
-  font-family: "CircularStd-Medium";
+  font-family: "CircularStd-Medium", sans-serif;
 }
 
 .sectionLink:hover {
@@ -50,12 +37,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .mainContainer {
-    padding: 0 1rem;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
   .sectionHeader {
     align-items: flex-start;
     flex-direction: column;

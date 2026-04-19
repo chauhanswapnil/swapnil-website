@@ -3,7 +3,7 @@
 import { Col, Row } from "react-bootstrap";
 
 import ProjectCard from "../components/ProjectCard";
-import styles from "../pages/Projects/index.module.css";
+import styles from "./projects.module.css";
 
 const data = [
   {
@@ -30,8 +30,8 @@ const data = [
 
 export default function Projects() {
   return (
-    <div className={styles.projectPageContainer}>
-      <h1>This page is under construction 🛠️.</h1>
+    <div className={`pageShell ${styles.page}`}>
+      <h1 className={styles.title}>This page is under construction 🛠️.</h1>
       <Row>
         {data.map((project) => (
           <Col key={project.title} lg={6} sm={12} mt={3} style={{ marginBottom: "2rem" }}>

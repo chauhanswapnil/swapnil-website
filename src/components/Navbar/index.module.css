@@ -1,11 +1,10 @@
 .navbarContainer {
-  margin: 0 0rem;
-  padding: 0 5rem;
+  padding: 0 var(--pagePadding);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  font-family: CircularStd-Black;
+  font-family: "CircularStd-Black", sans-serif;
   color: var(--mainTextColor);
 }
 
@@ -35,7 +34,7 @@
 }
 
 .navLink {
-  color: rgba(254, 254, 254, 0.82);
+  color: var(--softTextColor);
 }
 
 .navLink:hover,
@@ -45,6 +44,6 @@
 
 @media only screen and (max-width: 1024px) {
   .navbarContainer {
-    padding: 0 1rem;
+    padding: 0 var(--pagePaddingMobile);
   }
 }
