@@ -4,68 +4,36 @@
 	border-radius: 5px;
 	padding: 1.5rem;
 	font-family: 'CircularStd-Book';
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.previewContainer:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .dateText {
-	text-align: center;
+	margin: 0;
+  color: rgba(254, 254, 254, 0.7);
 }
 
 .blogTitle {
 	font-family: 'CircularStd-Black';
-	padding: 0.25rem 0;
+	padding: 0.5rem 0 0.25rem;
+  margin: 0;
 }
 
 .blogPreviewText {
 	margin: 0;
+  line-height: 1.7;
+  color: rgba(254, 254, 254, 0.86);
 }
 
 .blogReadMoreLink {
 	padding-top: 1.5rem;
-	text-align: center;
-	display: block;
+	display: inline-flex;
+  text-decoration: none;
+  font-family: "CircularStd-Medium";
 }
-
-/* Reset all link styles first */
-.blogLink,
-.blogLink:link,
-.blogLink:visited,
-.blogLink:hover,
-.blogLink:active {
-  color: #87CEEB !important; /* Added !important to override browser defaults */
-  text-decoration: none !important;  /* Removes default underline */
-  position: relative;
-  transition: color 0.2s ease-in-out;
-}
-
-/* Hover effect */
-.blogLink:hover {
-  color: #ADD8E6 !important; /* Added !important to override browser defaults */
-  text-decoration: none !important;
-}
-
-/* Underline animation */
-.blogLink::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: white; /* Changed to white */
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-.blogLink:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-@media only screen and (max-width: 1024px) {
-  .mainContainer {
-    padding: 0 2rem;
-      max-width: 90%;
-  }
-}
-

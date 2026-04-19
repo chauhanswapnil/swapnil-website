@@ -1,3 +1,13 @@
+---
+title: "Guidelines, Roadmap and Resources for beginner to advanced iOS app development using Swift"
+date: "2020-06-22"
+description: "A curated roadmap and set of resources for learning iOS development with Swift from beginner to advanced levels."
+slug: "guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift"
+featured: false
+tags: []
+excerpt: "If you want to get serious about iOS development, this post lays out a practical roadmap, useful resources, and a learning path that scales from beginner fundamentals to more advanced app work."
+---
+
 # Guidelines, Roadmap and Resources for beginner to advanced iOS app development using Swift
 -----
 Jun 22, 2020

@@ -1,3 +1,13 @@
+---
+title: "Procrastination and the Fear of Not Being 'Good Enough'"
+date: "2024-10-19"
+description: "A personal piece about writing, self-doubt, and the quiet ways perfectionism can stall creative work."
+slug: "procrastination-and-the-fear-of-not-being-good-enough"
+featured: true
+tags: []
+excerpt: "I want to read and write more. That thought has echoed in my mind for the past two years. Yet, as you can see from my sparse blog posts, I haven’t done much of either."
+---
+
 # Procrastination and the Fear of Not Being 'Good Enough'
 ----
 October 19, 2024

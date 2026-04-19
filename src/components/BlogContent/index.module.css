@@ -2,11 +2,96 @@
     padding: 0 5rem 3rem 5rem;
     font-family: 'CircularStd-Book';
     margin: 0 auto;
-    max-width: 75%
+    max-width: 75%;
   }
+
 .blogContainer {
   margin-top: 2rem;
   text-align: justify;
+  line-height: 1.8;
+}
+
+.blogHeader {
+  margin-bottom: 3rem;
+}
+
+.backLinkWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.blogMeta {
+  margin: 0;
+  color: rgba(254, 254, 254, 0.7);
+}
+
+.blogTitle {
+  margin: 0.5rem 0 1rem;
+  font-family: "CircularStd-Medium";
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1.05;
+  text-align: left;
+}
+
+.blogDescription {
+  margin: 0;
+  max-width: 48rem;
+  color: rgba(254, 254, 254, 0.82);
+  font-size: 1.05rem;
+}
+
+.blogContainer h2,
+.blogContainer h3,
+.blogContainer h4 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.blogContainer p,
+.blogContainer li,
+.blogContainer blockquote {
+  font-size: 1.02rem;
+}
+
+.blogContainer ul,
+.blogContainer ol {
+  padding-left: 1.5rem;
+}
+
+.blogContainer blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.35);
+  color: rgba(254, 254, 254, 0.82);
+}
+
+.blogContainer code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+.blogContainer pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.blogContainer img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.blogContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.blogContainer th,
+.blogContainer td {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.75rem;
+  text-align: left;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -64,4 +149,3 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-

@@ -1,3 +1,5 @@
+"use client";
+
 import CodeEditor from "@uiw/react-textarea-code-editor";
 
 import styles from "./index.module.css";

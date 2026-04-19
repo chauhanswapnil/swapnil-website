@@ -1,3 +1,5 @@
+"use client";
+
 import { Row, Col } from "react-bootstrap";
 import DocsEditor from "../DocsEditor";
 

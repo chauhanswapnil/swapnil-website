@@ -1,0 +1,63 @@
+.mainContainer {
+  padding: 0 5rem;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.contentContainer {
+}
+
+.secondaryText {
+  margin-top: 4rem;
+  font-family: "CircularStd-Book";
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: justify;
+}
+
+.loxContainer {
+  margin-top: 3rem;
+}
+
+.headings {
+  font-family: "CircularStd-Medium";
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  max-width: 29rem;
+}
+
+.sections {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sectionLink {
+  color: rgba(254, 254, 254, 0.8);
+  text-decoration: none;
+  font-family: "CircularStd-Medium";
+}
+
+.sectionLink:hover {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mainContainer {
+    padding: 0 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
