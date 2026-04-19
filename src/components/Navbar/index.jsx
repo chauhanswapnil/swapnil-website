@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "../ThemeToggle";
 import styles from "./index.module.css";
 
 const Navbar = () => {
@@ -19,6 +20,7 @@ const Navbar = () => {
           <Link className={styles.navLink} href="/projects">
             Projects
           </Link>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
