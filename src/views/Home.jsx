@@ -1,5 +1,5 @@
 import BlogPreview from "../components/BlogPreview";
-import Link from "next/link";
+import TrackedLink from "../components/TrackedLink";
 import styles from "./home.module.css";
 
 export default function Home({ featuredPosts }) {
@@ -11,9 +11,14 @@ export default function Home({ featuredPosts }) {
 
         <div className={styles.loxContainer}>
           <h2 className="sectionTitle">
-            <Link href="/playground" style={{ color: "inherit" }}>
+            <TrackedLink
+              href="/playground"
+              style={{ color: "inherit" }}
+              eventName="content_link_click"
+              eventParams={{ location: "home", link_type: "playground", target_url: "/playground" }}
+            >
               Lox Playground
-            </Link>
+            </TrackedLink>
           </h2>
           <p>
             Check out Lox playground which is an online repl for the interpreter
@@ -24,9 +29,14 @@ export default function Home({ featuredPosts }) {
         <div className={styles.sections}>
           <div className={styles.sectionHeader}>
             <h2 className="sectionTitle">I write sometimes</h2>
-            <Link href="/blog" className={styles.sectionLink}>
+            <TrackedLink
+              href="/blog"
+              className={styles.sectionLink}
+              eventName="content_link_click"
+              eventParams={{ location: "home", link_type: "blog_archive", target_url: "/blog" }}
+            >
               Browse all posts
-            </Link>
+            </TrackedLink>
           </div>
           {featuredPosts.map((post) => (
             <BlogPreview
@@ -35,6 +45,7 @@ export default function Home({ featuredPosts }) {
               title={post.title}
               excerpt={post.excerpt}
               slug={post.slug}
+              location="home"
             />
           ))}
         </div>

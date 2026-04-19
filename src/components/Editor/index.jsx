@@ -2,6 +2,7 @@
 
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { useState } from "react";
+import TrackedLink from "../TrackedLink";
 
 import styles from "./index.module.css";
 
@@ -54,9 +55,20 @@ print "Hi, Thank you for coming to my site.";`);
         <button onClick={runCode} className={styles.runButton}>
           Run
         </button>
-        <a target="_blank" href="https://www.github.com/chauhanswapnil/Slox" rel="noreferrer">
-          <button className={styles.runButton}>View Source</button>
-        </a>
+        <TrackedLink
+          href="https://www.github.com/chauhanswapnil/Slox"
+          external
+          className={styles.runButton}
+          eventName="playground_link_click"
+          eventParams={{
+            location: "playground",
+            link_type: "github",
+            project_slug: "slox",
+            target_url: "https://www.github.com/chauhanswapnil/Slox",
+          }}
+        >
+          View Source
+        </TrackedLink>
       </div>
       {output ? <p className={styles.outputArea}>{output}</p> : <></>}
     </div>

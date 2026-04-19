@@ -49,6 +49,7 @@ export default function BlogPage() {
             title={post.title}
             excerpt={post.excerpt}
             slug={post.slug}
+            location="blog_archive"
           />
         ))}
       </section>

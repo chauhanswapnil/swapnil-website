@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TrackedLink from "../TrackedLink";
 
 import styles from "./index.module.css";
 
@@ -28,23 +28,28 @@ export default function ProjectCard({ project }) {
 
       {links.length ? (
         <div className={styles.linkRow}>
-          {links.map((link) =>
-            link.external ? (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="accentLink"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link key={link.label} href={link.href} className="accentLink">
-                {link.label}
-              </Link>
-            ),
-          )}
+          {links.map((link) => (
+            <TrackedLink
+              key={link.label}
+              href={link.href}
+              className="accentLink"
+              external={link.external}
+              eventName="project_link_click"
+              eventParams={{
+                location: "project_card",
+                project_slug: project.slug,
+                link_type:
+                  link.label === "GitHub"
+                    ? "github"
+                    : link.label === "Open"
+                      ? "project_demo"
+                      : "project_writeup",
+                target_url: link.href,
+              }}
+            >
+              {link.label}
+            </TrackedLink>
+          ))}
         </div>
       ) : null}
     </article>
