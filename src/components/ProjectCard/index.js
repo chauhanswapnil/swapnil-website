@@ -1,34 +1,52 @@
-"use client";
-
-import { useState } from "react";
-import Modal from "react-bootstrap/Modal";
+import Link from "next/link";
 
 import styles from "./index.module.css";
 
 export default function ProjectCard({ project }) {
-  const [modalShow, setModalShow] = useState(false);
-  return (
-    <>
-      <div className={styles.card} onClick={() => setModalShow(true)}>
-        <div className={styles.imageOverlay}>
-          <div className={styles.imageOverlayText}>
-            <p className={styles.projectTitle}>{project.title}</p>
-          </div>
-        </div>
-      </div>
-      <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} project={project} />
-    </>
-  );
-}
+  const links = [
+    project.githubUrl ? { label: "GitHub", href: project.githubUrl, external: true } : null,
+    project.demoUrl ? { label: "Open", href: project.demoUrl, external: false } : null,
+    project.blogUrl ? { label: "Write-up", href: project.blogUrl, external: false } : null,
+  ].filter(Boolean);
 
-function MyVerticallyCenteredModal(props) {
   return (
-    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered contentClassName={styles.modalContainer}>
-      <Modal.Header closeButton>{/* <Modal.Title id="contained-modal-title-vcenter">Modal heading</Modal.Title> */}</Modal.Header>
-      <Modal.Body>
-        <h4 className={styles.modalTitle}>{props.project.title}</h4>
-        <p className={styles.modalDescription}>{props.project.description}</p>
-      </Modal.Body>
-    </Modal>
+    <article className={`${styles.card} surfaceCard`}>
+      <div className={styles.header}>
+        <h3 className={styles.projectTitle}>{project.title}</h3>
+      </div>
+
+      <p className={styles.hook}>{project.hook}</p>
+      <p className={styles.summary}>{project.summary}</p>
+
+      <ul className={styles.techList}>
+        {project.tech.map((item) => (
+          <li key={item} className={styles.techTag}>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      {links.length ? (
+        <div className={styles.linkRow}>
+          {links.map((link) =>
+            link.external ? (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="accentLink"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.label} href={link.href} className="accentLink">
+                {link.label}
+              </Link>
+            ),
+          )}
+        </div>
+      ) : null}
+    </article>
   );
 }
