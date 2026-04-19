@@ -14,6 +14,18 @@ export const metadata = {
       "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
     url: "https://swapnilchauhan.com",
     type: "website",
+    images: [
+      {
+        url: "/og/site.svg",
+        width: 1200,
+        height: 630,
+        alt: "Swapnil Chauhan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og/site.svg"],
   },
 };
 

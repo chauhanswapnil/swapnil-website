@@ -33,11 +33,20 @@ export async function generateMetadata({ params }) {
       type: "article",
       publishedTime: new Date(post.date).toISOString(),
       authors: ["Swapnil Chauhan"],
+      images: [
+        {
+          url: `/og/blog/${post.slug}.svg`,
+          width: 1200,
+          height: 630,
+          alt: `${post.title} | Swapnil Chauhan`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | Swapnil Chauhan`,
       description: post.description,
+      images: [`/og/blog/${post.slug}.svg`],
     },
   };
 }

@@ -46,12 +46,21 @@ export const metadata = {
     title: "Swapnil Chauhan",
     description:
       "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+    images: [
+      {
+        url: "/og/site.svg",
+        width: 1200,
+        height: 630,
+        alt: "Swapnil Chauhan",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Swapnil Chauhan",
     description:
       "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+    images: ["/og/site.svg"],
   },
   icons: {
     icon: [

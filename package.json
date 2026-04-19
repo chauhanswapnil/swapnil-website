@@ -19,6 +19,9 @@
     "styled-components": "^5.3.9"
   },
   "scripts": {
+    "generate:og": "node scripts/generate-og-images.mjs",
+    "predev": "npm run generate:og",
+    "prebuild": "npm run generate:og",
     "dev": "next dev",
     "start": "next dev",
     "build": "next build"
