@@ -1,0 +1,42 @@
+.page {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.hero {
+  margin: 1rem 0 3rem;
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.title {
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.description {
+  margin-top: 1rem;
+  font-family: "CircularStd-Book", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.listContainer {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .page {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+}

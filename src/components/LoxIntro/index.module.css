@@ -6,11 +6,11 @@
 }
 
 .introHeading {
-  font-family: CircularStd-Black, sans-serif;
+  font-family: "CircularStd-Black", sans-serif;
   color: var(--mainTextColor);
 }
 .introContent {
-  font-family: CircularStd-Book, sans-serif;
+  font-family: "CircularStd-Book", sans-serif;
   color: var(--mainTextColor);
 }
 

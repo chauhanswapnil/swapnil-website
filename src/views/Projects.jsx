@@ -1,13 +1,16 @@
+"use client";
+
 import { Col, Row } from "react-bootstrap";
-import ProjectCard from "../../components/ProjectCard";
-import styles from "./index.module.css";
+
+import ProjectCard from "../components/ProjectCard";
+import styles from "./projects.module.css";
+
 const data = [
   {
     title: "Lox Programming Language Interpreter",
     description:
       "Implemented a tree-walk interpreter for a dynamically typed object-oriented programming language (Lox) using Java,applying advanced object-oriented design principles for code reuse and efficiency. Developed features for the Lox programming language interpreter, including variable creation, loops, arithmetic operations, functions, and classes. Built an interpreter with error handling that provides a complete abstraction layer on top of Java.",
   },
-
   {
     title: "iLaaka Society Management",
     description:
@@ -27,16 +30,14 @@ const data = [
 
 export default function Projects() {
   return (
-    <div className={styles.projectPageContainer}>
-      <h1>This page is under construction 🛠️.</h1>
+    <div className={`pageShell ${styles.page}`}>
+      <h1 className={styles.title}>This page is under construction 🛠️.</h1>
       <Row>
-        {data.map((project) => {
-          return (
-            <Col lg={6} sm={12} mt={3} style={{ marginBottom: "2rem" }}>
-              <ProjectCard project={project} />
-            </Col>
-          );
-        })}
+        {data.map((project) => (
+          <Col key={project.title} lg={6} sm={12} mt={3} style={{ marginBottom: "2rem" }}>
+            <ProjectCard project={project} />
+          </Col>
+        ))}
       </Row>
     </div>
   );

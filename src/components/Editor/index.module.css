@@ -3,13 +3,22 @@
   overflow: auto;
   margin: 2rem auto;
   width: 90%;
-  border-radius: 1.5rem;
+  border-radius: var(--radiusMedia);
 }
 
 .editor {
   font-size: 1rem;
   background-color: var(--editorBackgroundColor);
+  color: var(--mainTextColor) !important;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .runButton {
@@ -23,18 +32,34 @@
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 600;
-  font-family: CircularStd-Medium, sans-serif;
+  font-family: "CircularStd-Medium", sans-serif;
   margin: 0 1rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .runButton:hover {
   background-color: var(--editorBackgroundColor);
   color: white;
 }
+
 .outputArea {
   margin: 1rem auto;
   width: 90%;
   white-space: pre;
   border: solid 1px var(--mainTextColor);
   color: var(--mainTextColor);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: left;
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .runButton {
+    width: min(16rem, 100%);
+    margin: 0;
+  }
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { useState } from "react";
 
@@ -37,6 +39,7 @@ print "Hi, Thank you for coming to my site.";`);
     <div className="text-center">
       <div className={styles.editorContainer}>
         <CodeEditor
+          data-color-mode="dark"
           value={code}
           language="java"
           placeholder="Please enter Lox code."

@@ -1,22 +1,25 @@
 .documentationContainer {
-  margin: 5rem 5rem 0;
+  margin: 5rem var(--pagePadding) 0;
   color: var(--mainTextColor);
 }
 
 .docsHeading {
   margin-bottom: 3rem;
+  font-family: "CircularStd-Medium", sans-serif;
 }
 
 .docsSubHeading {
-  font-family: 'CircularStd-Medium', sans-serif;
+  font-family: "CircularStd-Medium", sans-serif;
 }
 
 .docsDesc {
-  font-family: 'CircularStd-Book', sans-serif;
+  font-family: "CircularStd-Book", sans-serif;
+  color: var(--mainTextColor);
+  line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
   .documentationContainer {
-    margin: 5rem 2rem 0;
+    margin: 5rem var(--pagePaddingMobile) 0;
   }
 }

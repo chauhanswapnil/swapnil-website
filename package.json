@@ -8,28 +8,20 @@
     "@testing-library/user-event": "^14.4.3",
     "@uiw/react-textarea-code-editor": "^2.1.1",
     "bootstrap": "^5.2.3",
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.15",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-markdown": "^8.0.6",
-    "react-router-dom": "^6.10.0",
-    "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "styled-components": "^5.3.9",
-    "web-vitals": "^3.3.1"
+    "remark-gfm": "^3.0.1",
+    "styled-components": "^5.3.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "dev": "next dev",
+    "start": "next dev",
+    "build": "next build"
   },
   "browserslist": {
     "production": [

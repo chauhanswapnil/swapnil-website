@@ -1,3 +1,13 @@
+---
+title: "Plateauing"
+date: "2025-08-16"
+description: "A reflective essay on growth, ambition, and what it feels like when progress gets harder to measure."
+slug: "plateauing"
+featured: true
+tags: []
+excerpt: "It’s strange how time seems to slip through your fingers the older you get. When I look back, it feels like yesterday when I was graduating with my bachelor’s degree, packing my bags to move to the UK, finishing my master’s, and finally landing my first job."
+---
+
 # Plateauing
 ----
 August 16, 2025

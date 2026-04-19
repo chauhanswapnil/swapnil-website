@@ -1,8 +1,8 @@
 .footerCustom {
-  height: 30px;
   position: relative;
   border-top: solid var(--mainTextColor);
-  font-family: 'CircularStd-Book';
+  font-family: "CircularStd-Book", sans-serif;
+  margin-top: 4rem;
 }
 
 .socialLinks {
@@ -19,13 +19,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white !important;
-  text-decoration: none !important;
+  color: white;
+  text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
 .socialLink:hover {
-  color: #ADD8E6 !important;
+  color: var(--accentColorHover);
 }
 
 .socialLink svg {
@@ -35,20 +35,20 @@
 
 
 @media only screen and (max-width: 1024px) {
-.footerCustom {
+  .footerCustom {
     text-align: center;
-}
+  }
 
-.socialLinks {
-  justify-content: center;
-  display: inline-block;
+  .socialLinks {
+    justify-content: center;
+    display: inline-flex;
+    flex-direction: column;
     margin-bottom: 0rem;
-}
+    gap: 0.75rem;
+  }
 
-.socialLink {
-  display: flex;
-  align-items: center;
+  .socialLink {
+    display: flex;
+    align-items: center;
+  }
 }
-
-}
-

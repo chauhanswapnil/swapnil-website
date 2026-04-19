@@ -1,3 +1,5 @@
+"use client";
+
 import { Row, Col } from "react-bootstrap";
 import DocsEditor from "../DocsEditor";
 
@@ -124,7 +126,7 @@ export default function Documentation() {
       <Row>
         {docs.map((doc) => {
           return (
-            <Col lg={6} sm={12} style={{ marginBottom: "2rem" }}>
+            <Col key={doc.heading} lg={6} sm={12} style={{ marginBottom: "2rem" }}>
               <h5 className={styles.docsSubHeading}>{doc.heading}</h5>
               <p className={styles.docsDesc}>{doc.desc}</p>
               <DocsEditor code={doc.code} />

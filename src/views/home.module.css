@@ -1,0 +1,44 @@
+.page {
+  padding-top: 0;
+}
+
+.secondaryText {
+  margin-top: 4rem;
+  font-family: "CircularStd-Book", sans-serif;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.loxContainer {
+  margin-top: 3rem;
+}
+
+.sections {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sectionLink {
+  color: var(--softTextColor);
+  text-decoration: none;
+  font-family: "CircularStd-Medium", sans-serif;
+}
+
+.sectionLink:hover {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 1024px) {
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

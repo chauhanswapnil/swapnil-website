@@ -1,3 +1,13 @@
+---
+title: "Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle."
+date: "2021-06-26"
+description: "A walkthrough for building a Titanic classifier in TensorFlow, training it in Colab, and submitting predictions to Kaggle."
+slug: "titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle"
+featured: false
+tags: []
+excerpt: "This tutorial covers building a deep learning binary classification model with TensorFlow on the Titanic dataset, then wiring Google Colab to Kaggle so predictions can be uploaded straight from the notebook."
+---
+
 # Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle.
 
 June 26, 2021 
@@ -307,4 +317,3 @@ You can download the code for this tutorial [here](https://github.com/chauhanswa
 Follow me on [**twitter**](https://twitter.com/swapstar) to know me
 
 Reach out on [**LinkedIn**](https://www.linkedin.com/in/chauhanswapnil/)
-

@@ -1,3 +1,13 @@
+---
+title: "Pickel DNS - A Recursive DNS Resolver in Rust (Part 1)"
+date: "2024-11-11"
+description: "An introduction to DNS fundamentals and the first steps of building a recursive DNS resolver in Rust."
+slug: "recursive-dns-resolver-part-1"
+featured: true
+tags: []
+excerpt: "DNS maps human-readable domain names to machine IP addresses. In this post I break down the lookup process and start building a recursive DNS resolver in Rust from first principles."
+---
+
 # Pickel DNS - A Recursive DNS Resolver in Rust (Part 1)
 ----
 November 11, 2024
