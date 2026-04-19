@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.swapnilchauhan.com/sitemap.xml
-

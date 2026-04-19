@@ -12,9 +12,10 @@ export const metadata = {
     description:
       "An online playground for Swapnil Chauhan's Java implementation of the Lox language from Crafting Interpreters.",
     url: "https://swapnilchauhan.com/playground",
+    type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Lox Playground | Swapnil Chauhan",
     description:
       "An online playground for Swapnil Chauhan's Java implementation of the Lox language from Crafting Interpreters.",

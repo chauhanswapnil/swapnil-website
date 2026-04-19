@@ -22,6 +22,7 @@ export async function generateMetadata({ params }) {
   return {
     title: post.title,
     description: post.description,
+    keywords: post.tags,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
@@ -29,6 +30,9 @@ export async function generateMetadata({ params }) {
       title: `${post.title} | Swapnil Chauhan`,
       description: post.description,
       url: `https://swapnilchauhan.com/blog/${post.slug}`,
+      type: "article",
+      publishedTime: new Date(post.date).toISOString(),
+      authors: ["Swapnil Chauhan"],
     },
     twitter: {
       card: "summary_large_image",
@@ -46,5 +50,35 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
-  return <BlogContent post={post} />;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    url: `https://swapnilchauhan.com/blog/${post.slug}`,
+    author: {
+      "@type": "Person",
+      name: "Swapnil Chauhan",
+      url: "https://swapnilchauhan.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Swapnil Chauhan",
+      url: "https://swapnilchauhan.com",
+    },
+    mainEntityOfPage: `https://swapnilchauhan.com/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <BlogContent post={post} />
+    </>
+  );
 }

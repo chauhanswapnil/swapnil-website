@@ -8,6 +8,12 @@ export const metadata = {
   alternates: {
     canonical: "/blog",
   },
+  openGraph: {
+    title: "Blog | Swapnil Chauhan",
+    description: "Essays, engineering notes, and programming write-ups by Swapnil Chauhan.",
+    url: "https://swapnilchauhan.com/blog",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {
