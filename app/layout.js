@@ -12,7 +12,7 @@ export const metadata = {
     template: "%s | Swapnil Chauhan",
   },
   description:
-    "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+    "Backend software engineer writing about programming languages, engineering, and things worth learning.",
   keywords: [
     "Swapnil Chauhan",
     "backend engineer",
@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "Swapnil Chauhan",
     title: "Swapnil Chauhan",
     description:
-      "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+      "Backend software engineer writing about programming languages, engineering, and things worth learning.",
     images: [
       {
         url: "/og/site.svg",
@@ -59,7 +59,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Swapnil Chauhan",
     description:
-      "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+      "Backend software engineer writing about programming languages, engineering, and things worth learning.",
     images: ["/og/site.svg"],
   },
   icons: {

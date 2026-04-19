@@ -4,14 +4,14 @@ import { getFeaturedBlogPosts } from "../src/content/blogs";
 export const metadata = {
   title: "Swapnil Chauhan",
   description:
-    "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+    "Backend software engineer writing about programming languages, engineering, and things worth learning.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Swapnil Chauhan",
     description:
-      "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+      "Backend software engineer writing about programming languages, engineering, and things worth learning.",
     url: "https://swapnilchauhan.com",
     type: "website",
     images: [

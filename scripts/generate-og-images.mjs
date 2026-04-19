@@ -108,7 +108,7 @@ writeSvg("site.svg", {
   eyebrow: "Site",
   title: "Swapnil Chauhan",
   description:
-    "Backend software engineer writing about programming languages, engineering, and things worth learning slowly.",
+    "Backend software engineer writing about programming languages, engineering, and things worth learning.",
 });
 
 writeSvg("blog.svg", {
@@ -120,9 +120,9 @@ writeSvg("blog.svg", {
 
 writeSvg("projects.svg", {
   eyebrow: "Projects",
-  title: "Experiments, interpreters, and things I have built",
+  title: "Some of the things I have built",
   description:
-    "Selected projects and software experiments by Swapnil Chauhan.",
+    "A collection of interpreters, tools, experiments, and write-ups.",
 });
 
 writeSvg("playground.svg", {
