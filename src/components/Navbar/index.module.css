@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  font-family: "CircularStd-Black", sans-serif;
+  font-family: var(--font-family-display);
   color: var(--mainTextColor);
 }
 
@@ -17,7 +17,7 @@
 .logo h1 {
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 .brandLink,
@@ -30,8 +30,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-family: "CircularStd-Medium";
-  font-size: 0.95rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm-plus);
 }
 
 .navLink {

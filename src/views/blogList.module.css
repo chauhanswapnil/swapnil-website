@@ -12,26 +12,25 @@
   margin: 0 0 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: var(--font-size-xs);
 }
 
 .title {
-  font-family: "CircularStd-Medium", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-page-title);
   line-height: 1.05;
   margin: 0;
 }
 
 .description {
   margin-top: 1rem;
-  font-family: "CircularStd-Book", sans-serif;
-  font-size: 1.05rem;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-lg);
   line-height: 1.7;
 }
 
 .listContainer {
   display: grid;
-  gap: 1.25rem;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -9,7 +9,7 @@ export default function BlogContent({ post }) {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.blogContainer}>
-        <header className={styles.blogHeader}>
+        <header>
           <p className={styles.backLinkWrapper}>
             <TrackedLink
               className="accentLink"
@@ -25,9 +25,6 @@ export default function BlogContent({ post }) {
               Back to all posts
             </TrackedLink>
           </p>
-          <p className={styles.blogMeta}>{post.dateLabel}</p>
-          <h1 className={styles.blogTitle}>{post.title}</h1>
-          <p className={styles.blogDescription}>{post.description}</p>
         </header>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}

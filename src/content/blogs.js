@@ -32,14 +32,14 @@ function readPostFromFile(filename) {
   const fullPath = path.join(BLOG_POSTS_DIRECTORY, filename);
   const source = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(source);
-  const excerpt =
-    data.excerpt || `${stripMarkdown(content).slice(0, 220).trimEnd()}...`;
+  const dateLabel = formatDate(data.date);
+  const excerpt = data.excerpt || `${stripMarkdown(content).slice(0, 220).trimEnd()}...`;
 
   return {
     slug: data.slug,
     title: data.title,
     date: data.date,
-    dateLabel: formatDate(data.date),
+    dateLabel,
     description: data.description,
     excerpt,
     featured: data.featured ?? false,

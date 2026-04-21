@@ -21,13 +21,13 @@
 }
 
 .icon {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm-plus);
   line-height: 1;
 }
 
 .label {
-  font-family: "CircularStd-Medium", sans-serif;
-  font-size: 0.9rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm);
 }
 
 @media only screen and (max-width: 640px) {

@@ -7,10 +7,10 @@
 }
 
 .editor {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   background-color: var(--editorBackgroundColor);
   color: var(--mainTextColor) !important;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+  font-family: var(--font-family-mono);
 }
 
 .buttonsContainer {
@@ -30,9 +30,9 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
-  font-family: "CircularStd-Medium", sans-serif;
+  font-family: var(--font-family-body-strong);
   margin: 0 1rem;
   transition:
     background-color 0.2s ease,
