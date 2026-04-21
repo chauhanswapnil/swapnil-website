@@ -14,14 +14,14 @@
 
 .projectTitle {
   margin: 0;
-  font-family: "CircularStd-Black", sans-serif;
-  font-size: 1.5rem;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
   line-height: 1.05;
 }
 
 .hook {
   margin: 0;
-  font-family: "CircularStd-Medium", sans-serif;
+  font-family: var(--font-family-body-strong);
   color: var(--mainTextColor);
   line-height: 1.5;
 }
@@ -47,7 +47,7 @@
   border: 1px solid var(--borderSubtle);
   background: var(--tagBackground);
   color: var(--mainTextColor);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
 }
 
 .linkRow {

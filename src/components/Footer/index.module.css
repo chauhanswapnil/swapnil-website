@@ -1,7 +1,7 @@
 .footerCustom {
   position: relative;
   border-top: solid var(--mainTextColor);
-  font-family: "CircularStd-Book", sans-serif;
+  font-family: var(--font-family-body);
   margin-top: 4rem;
 }
 

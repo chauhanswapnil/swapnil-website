@@ -5,15 +5,15 @@
 
 .docsHeading {
   margin-bottom: 3rem;
-  font-family: "CircularStd-Medium", sans-serif;
+  font-family: var(--font-family-heading);
 }
 
 .docsSubHeading {
-  font-family: "CircularStd-Medium", sans-serif;
+  font-family: var(--font-family-heading);
 }
 
 .docsDesc {
-  font-family: "CircularStd-Book", sans-serif;
+  font-family: var(--font-family-body);
   color: var(--softTextColor);
   line-height: 1.7;
 }

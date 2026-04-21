@@ -1,5 +1,5 @@
 .mainContainer {
-  font-family: "CircularStd-Book", sans-serif;
+  font-family: var(--font-family-body);
   margin: 0 auto;
 }
 
@@ -27,8 +27,8 @@
 
 .blogTitle {
   margin: 0.5rem 0 1rem;
-  font-family: "CircularStd-Medium";
-  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-article-title);
   line-height: 1.05;
   text-align: left;
 }
@@ -37,7 +37,7 @@
   margin: 0;
   max-width: 48rem;
   color: var(--softTextColor);
-  font-size: 1.05rem;
+  font-size: var(--font-size-body-lg);
 }
 
 .blogContainer h2,
@@ -51,7 +51,7 @@
 .blogContainer p,
 .blogContainer li,
 .blogContainer blockquote {
-  font-size: 1.02rem;
+  font-size: var(--font-size-body);
 }
 
 .blogContainer ul,
