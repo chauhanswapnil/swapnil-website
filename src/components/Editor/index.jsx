@@ -18,7 +18,7 @@ print "Hi, Thank you for coming to my site.";`);
     const body = {
       code: `${code}`,
     };
-    fetch("https://server.swapnilchauhan.com/loxJava", {
+    fetch("https://loxapi.swapnilchauhan.com/loxJava", {
       method: "POST",
       headers: {
         // Accept: "application/json",
