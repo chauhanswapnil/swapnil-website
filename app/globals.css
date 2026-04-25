@@ -1,23 +1,24 @@
 @font-face {
-  font-family: "CircularStd-Black";
-  src: url("../src/fonts/CircularStd/CircularStd-Black.woff") format("woff");
-}
-
-@font-face {
   font-family: "CircularStd-Book";
-  src: url("../src/fonts/CircularStd/CircularStd-Book.woff") format("woff");
+  src:
+    local("Circular Std Book"),
+    url("../src/fonts/CircularStd/CircularStd-Book.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "CircularStd-Medium";
-  src: url("../src/fonts/CircularStd/CircularStd-Medium.woff") format("woff");
+  src:
+    local("Circular Std Medium"),
+    url("../src/fonts/CircularStd/CircularStd-Medium.woff") format("woff");
+  font-display: swap;
 }
 
 :root {
   --font-family-body: "CircularStd-Book", sans-serif;
   --font-family-body-strong: "CircularStd-Medium", sans-serif;
   --font-family-heading: "CircularStd-Medium", sans-serif;
-  --font-family-display: "CircularStd-Black", sans-serif;
+  --font-family-display: "CircularStd-Medium", sans-serif;
   --font-family-mono: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
   --font-size-xs: 0.8rem;
   --font-size-sm: 0.9rem;

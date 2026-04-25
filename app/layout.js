@@ -1,7 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Script from "next/script";
 
+import AnalyticsLinkTracker from "../src/components/AnalyticsLinkTracker";
 import Footer from "../src/components/Footer";
 import Navbar from "../src/components/Navbar";
 
@@ -101,6 +101,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
+        <AnalyticsLinkTracker />
         <Navbar />
         {children}
         <Footer />

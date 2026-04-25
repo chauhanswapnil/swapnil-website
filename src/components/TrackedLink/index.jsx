@@ -1,8 +1,4 @@
-"use client";
-
 import Link from "next/link";
-
-import { trackEvent } from "../../lib/analytics";
 
 export default function TrackedLink({
   href,
@@ -13,11 +9,12 @@ export default function TrackedLink({
   external = false,
   ...props
 }) {
-  const handleClick = () => {
-    if (eventName) {
-      trackEvent(eventName, eventParams);
-    }
-  };
+  const analyticsProps = eventName
+    ? {
+        "data-analytics-event": eventName,
+        "data-analytics-params": JSON.stringify(eventParams ?? {}),
+      }
+    : {};
 
   if (external) {
     return (
@@ -26,7 +23,7 @@ export default function TrackedLink({
         target="_blank"
         rel="noreferrer"
         className={className}
-        onClick={handleClick}
+        {...analyticsProps}
         {...props}
       >
         {children}
@@ -35,7 +32,7 @@ export default function TrackedLink({
   }
 
   return (
-    <Link href={href} className={className} onClick={handleClick} {...props}>
+    <Link href={href} className={className} {...analyticsProps} {...props}>
       {children}
     </Link>
   );

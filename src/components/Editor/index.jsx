@@ -1,6 +1,5 @@
 "use client";
 
-import CodeEditor from "@uiw/react-textarea-code-editor";
 import { useState } from "react";
 import TrackedLink from "../TrackedLink";
 
@@ -13,47 +12,51 @@ export default function Editor() {
 
 print "Hi, Thank you for coming to my site.";`);
   const [output, setOutput] = useState(null);
+  const [isRunning, setIsRunning] = useState(false);
 
-  const runCode = () => {
-    const body = {
-      code: `${code}`,
-    };
-    fetch("https://server.swapnilchauhan.com/loxJava", {
-      method: "POST",
-      headers: {
-        // Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-      .then((res) => {
-        // setOutput(res.text.toString())
-        res.text().then((out) => {
-          console.log(out);
-          setOutput(out);
-        });
-      })
-      .catch((error) => console.log(error));
+  const runCode = async () => {
+    setIsRunning(true);
+    setOutput(null);
+
+    try {
+      const response = await fetch("https://server.swapnilchauhan.com/loxJava", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code }),
+      });
+      const out = await response.text();
+      setOutput(out);
+    } catch {
+      setOutput("Unable to run code right now. Please try again in a moment.");
+    } finally {
+      setIsRunning(false);
+    }
   };
 
   return (
     <div className="text-center">
       <div className={styles.editorContainer}>
-        <CodeEditor
+        <label className={styles.editorLabel} htmlFor="lox-editor">
+          Lox editor
+        </label>
+        <textarea
+          id="lox-editor"
           value={code}
-          language="java"
           placeholder="Please enter Lox code."
-          onChange={(evn) => {
-            setCode(evn.target.value);
+          onChange={(event) => {
+            setCode(event.target.value);
           }}
-          padding={15}
           className={styles.editor}
-          minHeight={500}
+          spellCheck="false"
+          autoCapitalize="off"
+          autoCorrect="off"
         />
       </div>
       <div className={styles.buttonsContainer}>
-        <button onClick={runCode} className={styles.runButton}>
-          Run
+        <button onClick={runCode} className={styles.runButton} disabled={isRunning}>
+          {isRunning ? "Running..." : "Run"}
         </button>
         <TrackedLink
           href="https://www.github.com/chauhanswapnil/Slox"
@@ -70,7 +73,7 @@ print "Hi, Thank you for coming to my site.";`);
           View Source
         </TrackedLink>
       </div>
-      {output ? <p className={styles.outputArea}>{output}</p> : <></>}
+      {output ? <pre className={styles.outputArea}>{output}</pre> : null}
     </div>
   );
 }

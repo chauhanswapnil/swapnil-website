@@ -9,3 +9,25 @@ export function trackEvent(eventName, params = {}) {
 
   window.gtag("event", eventName, params);
 }
+
+export function trackEventFromElement(element) {
+  if (!element) {
+    return;
+  }
+
+  const eventName = element.dataset.analyticsEvent;
+
+  if (!eventName) {
+    return;
+  }
+
+  try {
+    const params = element.dataset.analyticsParams
+      ? JSON.parse(element.dataset.analyticsParams)
+      : {};
+
+    trackEvent(eventName, params);
+  } catch {
+    trackEvent(eventName);
+  }
+}

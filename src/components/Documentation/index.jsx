@@ -1,8 +1,5 @@
 "use client";
 
-import { Row, Col } from "react-bootstrap";
-import DocsEditor from "../DocsEditor";
-
 import styles from "./index.module.css";
 
 const docs = [
@@ -123,17 +120,19 @@ export default function Documentation() {
   return (
     <div className={styles.documentationContainer}>
       <h2 className={styles.docsHeading}>Documentation</h2>
-      <Row>
+      <div className={styles.docsGrid}>
         {docs.map((doc) => {
           return (
-            <Col key={doc.heading} lg={6} sm={12} style={{ marginBottom: "2rem" }}>
+            <article key={doc.heading} className={styles.docCard}>
               <h5 className={styles.docsSubHeading}>{doc.heading}</h5>
               <p className={styles.docsDesc}>{doc.desc}</p>
-              <DocsEditor code={doc.code} />
-            </Col>
+              <pre className={styles.codeBlock}>
+                <code>{doc.code}</code>
+              </pre>
+            </article>
           );
         })}
-      </Row>
+      </div>
     </div>
   );
 }

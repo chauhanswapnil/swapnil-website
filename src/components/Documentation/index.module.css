@@ -8,6 +8,16 @@
   font-family: var(--font-family-heading);
 }
 
+.docsGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.docCard {
+  min-width: 0;
+}
+
 .docsSubHeading {
   font-family: var(--font-family-heading);
 }
@@ -18,8 +28,26 @@
   line-height: 1.7;
 }
 
+.codeBlock {
+  margin: 0;
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--borderSubtle);
+  border-radius: 1rem;
+  background: var(--editorBackgroundColor);
+  color: var(--mainTextColor);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  white-space: pre;
+}
+
 @media (max-width: 1024px) {
   .documentationContainer {
     margin: 5rem var(--pagePaddingMobile) 0;
+  }
+
+  .docsGrid {
+    grid-template-columns: 1fr;
   }
 }

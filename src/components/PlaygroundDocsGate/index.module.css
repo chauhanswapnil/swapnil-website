@@ -1,0 +1,39 @@
+.section {
+  margin-bottom: 4rem;
+}
+
+.toggle {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--borderSubtle);
+  border-radius: 999px;
+  background: var(--subtleSurface);
+  color: var(--mainTextColor);
+  padding: 0.8rem 1.25rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toggle:hover {
+  background: var(--subtleSurfaceHover);
+  border-color: var(--borderStrongHover);
+  transform: translateY(-1px);
+}
+
+.loading {
+  width: min(var(--pageWidth), 100%);
+  margin: 1.5rem auto 0;
+  padding: 0 var(--pagePadding);
+}
+
+@media (max-width: 1024px) {
+  .loading {
+    width: min(var(--pageWidthMobile), 100%);
+    padding: 0 var(--pagePaddingMobile);
+  }
+}
