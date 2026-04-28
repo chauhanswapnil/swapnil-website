@@ -1,6 +1,6 @@
 .editor {
   font-size: var(--font-size-sm);
-  background-color: var(--editorBackgroundColor);
+  /* background-color: var(--editorBackgroundColor); */
   color: var(--mainTextColor) !important;
   font-family: var(--font-family-mono);
   border-radius: 1rem;
