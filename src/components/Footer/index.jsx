@@ -6,13 +6,13 @@ export default function Footer() {
     <div className={styles.footerCustom}>
       <div className={styles.socialLinks}>
         <TrackedLink
-          href="mailto:swapnil@chauhan.dev"
+          href="mailto:mail@swapnilchauhan.com"
           className={styles.socialLink}
           eventName="nav_link_click"
           eventParams={{
             location: "footer",
             link_type: "email",
-            target_url: "mailto:swapnil@chauhan.dev",
+            target_url: "mailto:mail@swapnilchauhan.com",
           }}
         >
           <svg
@@ -27,7 +27,7 @@ export default function Footer() {
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          swapnil@chauhan.dev
+          mail@swapnilchauhan.com
         </TrackedLink>
         <TrackedLink
           href="https://github.com/chauhanswapnil"
