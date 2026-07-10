@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className={styles.navbarCustom}>
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <h1>
+          <p>
             <TrackedLink
               className={styles.brandLink}
               href="/"
@@ -16,7 +16,7 @@ const Navbar = () => {
             >
               Swapnil Chauhan
             </TrackedLink>
-          </h1>
+          </p>
         </div>
         <div className={styles.navLinks}>
           <TrackedLink

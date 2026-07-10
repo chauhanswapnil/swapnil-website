@@ -10,6 +10,11 @@
   color: var(--mainTextColor);
 }
 
+.introSubheading {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+}
+
 .introContent {
   font-family: var(--font-family-body);
   color: var(--softTextColor);

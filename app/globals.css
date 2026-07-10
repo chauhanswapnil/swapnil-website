@@ -95,6 +95,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.skipLink {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.65rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--accentColor);
+  color: var(--secondaryTextColor);
+  font-family: var(--font-family-body-strong);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, textarea, input, select):focus-visible {
+  outline: 3px solid var(--accentColor) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px var(--backgroundColor) !important;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 ::selection {
   background: var(--accentColor);
   color: var(--secondaryTextColor);

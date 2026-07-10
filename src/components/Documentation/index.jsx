@@ -127,7 +127,7 @@ export default function Documentation() {
         {docs.map((doc) => {
           return (
             <Col key={doc.heading} lg={6} sm={12} style={{ marginBottom: "2rem" }}>
-              <h5 className={styles.docsSubHeading}>{doc.heading}</h5>
+              <h3 className={styles.docsSubHeading}>{doc.heading}</h3>
               <p className={styles.docsDesc}>{doc.desc}</p>
               <DocsEditor code={doc.code} />
             </Col>

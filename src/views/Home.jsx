@@ -5,6 +5,7 @@ import styles from "./home.module.css";
 export default function Home({ featuredPosts }) {
   return (
     <div className={`pageShell ${styles.page}`}>
+        <h1 className="srOnly">Swapnil Chauhan, backend software engineer</h1>
         <p className={styles.secondaryText}>
           I’m a backend software engineer with a deep love for programming languages. You could say I’m on a never-ending quest to find the perfect syntax, or at least the one that sparks the most joy. Whether it’s the memory safety of Rust or the simplicity of Go, I’m always eager to dive into something new and add another language to my growing collection.
         </p>
