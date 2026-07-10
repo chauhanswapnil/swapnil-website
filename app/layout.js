@@ -101,8 +101,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
+        <a className="skipLink" href="#main-content">
+          Skip to main content
+        </a>
         <Navbar />
-        {children}
+        <main id="main-content" tabIndex="-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

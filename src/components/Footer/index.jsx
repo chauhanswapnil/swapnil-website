@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 
 export default function Footer() {
   return (
-    <div className={styles.footerCustom}>
+    <footer className={styles.footerCustom}>
       <div className={styles.socialLinks}>
         <TrackedLink
           href="mailto:mail@swapnilchauhan.com"
@@ -70,7 +70,7 @@ export default function Footer() {
           swapstar
         </TrackedLink>
       </div>
-    </div>
+    </footer>
   );
 }
 
