@@ -9,24 +9,50 @@
   padding: 0 var(--pagePadding) 3rem;
   margin-top: 2rem;
   /* text-align: justify; */
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .backLinkWrapper {
   margin-bottom: 1.5rem;
 }
 
+.blogContainer h1,
 .blogContainer h2,
 .blogContainer h3,
 .blogContainer h4 {
   margin-bottom: 0.8rem;
   text-align: left;
+  font-family: var(--font-family-display);
+}
+
+.headingAnchor {
+  display: inline-block;
+  margin-left: 0.35rem;
+  color: var(--mutedTextColor);
+  font-family: var(--font-family-body-strong);
+  font-size: 0.72em;
+  opacity: 0;
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.blogContainer h1:hover .headingAnchor,
+.blogContainer h2:hover .headingAnchor,
+.blogContainer h3:hover .headingAnchor,
+.blogContainer h4:hover .headingAnchor,
+.headingAnchor:focus-visible {
+  opacity: 1;
+}
+
+.headingAnchor:hover {
+  color: var(--accentColor);
 }
 
 .blogContainer p,
 .blogContainer li,
 .blogContainer blockquote {
   font-size: var(--font-size-body);
+  color: var(--softTextColor);
 }
 
 .blogContainer ul,
@@ -53,14 +79,73 @@
 }
 
 .blogContainer img {
+  display: block;
   max-width: 100%;
+  margin: 0 auto;
   border-radius: 12px;
+}
+
+.imageWrapper {
+  display: block;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.imageCaption {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--softTextColor);
+  font-size: 0.9em;
+  font-style: italic;
 }
 
 .blogContainer table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+}
+
+.blogContainer sup {
+  font-size: 0.7em;
+}
+
+.blogContainer section[data-footnotes] {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borderSubtle);
+  color: var(--softTextColor);
+}
+
+.blogContainer section[data-footnotes] :global(.sr-only) {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0 0 0.9rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border: 0;
+  font-family: var(--font-family-display);
+  font-size: 1.25rem;
+}
+
+.blogContainer section[data-footnotes] p,
+.blogContainer section[data-footnotes] li {
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.blogContainer :global(.sr-only) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .blogContainer th,
