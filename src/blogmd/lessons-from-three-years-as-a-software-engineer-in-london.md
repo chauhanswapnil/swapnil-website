@@ -1,6 +1,6 @@
 ---
 title: "Lessons from three years as a software engineer in London"
-date: "2026-07-16"
+date: "2026-07-21"
 description: "A reflection on three years of software engineering in London, and the next chapter: moving to the San Francisco Bay Area for a Master's in Engineering Management."
 slug: "lessons-from-three-years-as-a-software-engineer-in-london"
 featured: true
