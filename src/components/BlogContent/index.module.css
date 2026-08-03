@@ -1,28 +1,92 @@
 .mainContainer {
   font-family: var(--font-family-body);
+}
+
+/* Article beside a contents rail. The rail collapses on narrow screens and
+   the article keeps its own comfortable measure either way. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 46rem) 15rem;
+  justify-content: center;
+  gap: 3.5rem;
+  width: min(90%, 100%);
   margin: 0 auto;
+  padding: 2.5rem var(--pagePaddingMobile) 4rem;
+}
+
+.sidebar {
+  min-width: 0;
 }
 
 .blogContainer {
-  width: min(var(--pageWidth), 100%);
-  margin: 2rem auto 0;
-  padding: 0 var(--pagePadding) 3rem;
-  margin-top: 2rem;
-  /* text-align: justify; */
-  line-height: 1.7;
+  min-width: 0;
+  line-height: 1.75;
 }
 
-.backLinkWrapper {
+/* Article header */
+
+.articleHeader {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--borderSubtle);
+}
+
+.backLink {
+  display: inline-block;
   margin-bottom: 1.5rem;
+  color: var(--mutedTextColor);
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.blogContainer h1,
-.blogContainer h2,
-.blogContainer h3,
-.blogContainer h4 {
-  margin-bottom: 0.8rem;
+.backLink:hover {
+  color: var(--accentColor);
+}
+
+.articleTitle {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-article-title);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--mainTextColor);
+}
+
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  color: var(--mutedTextColor);
+  font-size: var(--font-size-sm);
+}
+
+/* Article body */
+
+.articleBody h1,
+.articleBody h2,
+.articleBody h3,
+.articleBody h4 {
+  margin: 2.5rem 0 0.9rem;
   text-align: left;
   font-family: var(--font-family-display);
+  line-height: 1.25;
+  scroll-margin-top: 6rem;
+}
+
+.articleBody h2 {
+  font-size: 1.6rem;
+}
+
+.articleBody h3 {
+  font-size: 1.3rem;
+}
+
+.articleBody h4 {
+  font-size: 1.12rem;
 }
 
 .headingAnchor {
@@ -33,13 +97,15 @@
   font-size: 0.72em;
   opacity: 0;
   text-decoration: none;
-  transition: opacity 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition:
+    opacity 0.15s ease-in-out,
+    color 0.15s ease-in-out;
 }
 
-.blogContainer h1:hover .headingAnchor,
-.blogContainer h2:hover .headingAnchor,
-.blogContainer h3:hover .headingAnchor,
-.blogContainer h4:hover .headingAnchor,
+.articleBody h1:hover .headingAnchor,
+.articleBody h2:hover .headingAnchor,
+.articleBody h3:hover .headingAnchor,
+.articleBody h4:hover .headingAnchor,
 .headingAnchor:focus-visible {
   opacity: 1;
 }
@@ -48,37 +114,59 @@
   color: var(--accentColor);
 }
 
-.blogContainer p,
-.blogContainer li,
-.blogContainer blockquote {
+.articleBody p,
+.articleBody li,
+.articleBody blockquote {
   font-size: var(--font-size-body);
   color: var(--softTextColor);
 }
 
-.blogContainer ul,
-.blogContainer ol {
+.articleBody p {
+  margin: 0 0 1.35rem;
+}
+
+.articleBody ul,
+.articleBody ol {
   padding-left: 1.5rem;
+  margin-bottom: 1.35rem;
 }
 
-.blogContainer blockquote {
-  margin: 1.5rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--blockquoteBorderColor);
-  color: var(--softTextColor);
+.articleBody li {
+  margin-bottom: 0.4rem;
 }
 
-.blogContainer code {
+.articleBody blockquote {
+  margin: 1.75rem 0;
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  border-left: 3px solid var(--accentColor);
+  color: var(--mainTextColor);
+  font-size: var(--font-size-body-lg);
+  font-style: italic;
+}
+
+.articleBody blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.articleBody hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--borderSubtle);
+}
+
+.articleBody code {
   background: var(--inlineCodeBackground);
   padding: 0.15rem 0.35rem;
   border-radius: 4px;
+  font-size: 0.92em;
 }
 
-.blogContainer pre code {
+.articleBody pre code {
   background: transparent;
   padding: 0;
 }
 
-.blogContainer img {
+.articleBody img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -87,36 +175,51 @@
 
 .imageWrapper {
   display: block;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   text-align: center;
 }
 
 .imageCaption {
   display: block;
   margin-top: 0.6rem;
-  color: var(--softTextColor);
-  font-size: 0.9em;
+  color: var(--mutedTextColor);
+  font-size: 0.88em;
   font-style: italic;
 }
 
-.blogContainer table {
+.articleBody table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
+  font-size: var(--font-size-sm-plus);
 }
 
-.blogContainer sup {
+.articleBody th,
+.articleBody td {
+  border: 1px solid var(--borderSubtle);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.articleBody th {
+  background: var(--subtleSurface);
+  font-family: var(--font-family-body-strong);
+}
+
+.articleBody sup {
   font-size: 0.7em;
 }
 
-.blogContainer section[data-footnotes] {
-  margin-top: 2.5rem;
+/* Footnotes */
+
+.articleBody section[data-footnotes] {
+  margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--borderSubtle);
   color: var(--softTextColor);
 }
 
-.blogContainer section[data-footnotes] :global(.sr-only) {
+.articleBody section[data-footnotes] :global(.sr-only) {
   position: static;
   width: auto;
   height: auto;
@@ -130,13 +233,13 @@
   font-size: 1.25rem;
 }
 
-.blogContainer section[data-footnotes] p,
-.blogContainer section[data-footnotes] li {
-  font-size: 0.85rem;
-  line-height: 1.55;
+.articleBody section[data-footnotes] p,
+.articleBody section[data-footnotes] li {
+  font-size: 0.87rem;
+  line-height: 1.6;
 }
 
-.blogContainer :global(.sr-only) {
+.articleBody :global(.sr-only) {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -148,16 +251,15 @@
   border: 0;
 }
 
-.blogContainer th,
-.blogContainer td {
-  border: 1px solid var(--borderSubtle);
-  padding: 0.75rem;
-  text-align: left;
+@media only screen and (max-width: 1200px) {
+  .layout {
+    grid-template-columns: minmax(0, 46rem);
+    width: min(var(--pageWidthMobile), 100%);
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-  .blogContainer {
-    width: min(var(--pageWidthMobile), 100%);
-    padding: 0 var(--pagePaddingMobile) 3rem;
+  .layout {
+    padding: 1.75rem var(--pagePaddingMobile) 3rem;
   }
 }

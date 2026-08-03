@@ -1,27 +1,41 @@
+/* Matches the editor's container so the copy lines up with the panes. */
 .introContainer {
-  justify-content: center;
-  margin: 2rem auto;
-  width: 70%;
-  text-align: center;
+  width: min(90%, 100%);
+  margin: 3rem auto 2.5rem;
+}
+
+.introContainer > * {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--mutedTextColor);
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .introHeading {
+  margin: 0;
   font-family: var(--font-family-display);
+  font-size: var(--font-size-page-title);
+  line-height: 1;
+  letter-spacing: -0.02em;
   color: var(--mainTextColor);
 }
 
-.introSubheading {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-lg);
-}
-
 .introContent {
+  margin: 1.1rem 0 0;
   font-family: var(--font-family-body);
+  font-size: var(--font-size-body-lg);
+  line-height: 1.75;
   color: var(--softTextColor);
 }
 
 @media (max-width: 1024px) {
   .introContainer {
-    width: 90%;
+    margin-top: 2rem;
   }
 }

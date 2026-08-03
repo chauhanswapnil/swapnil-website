@@ -1,29 +1,53 @@
 .previewContainer {
-	margin: 0.75rem 0;
-	padding: 1.5rem;
-	font-family: var(--font-family-body);
+  display: flex;
+  flex-direction: column;
+  margin: 0.75rem 0;
+  padding: 1.5rem;
+  font-family: var(--font-family-body);
 }
 
-.dateText {
-	margin: 0;
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
   color: var(--mutedTextColor);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.02em;
+}
+
+.metaDot {
+  opacity: 0.6;
 }
 
 .blogTitle {
-	font-family: var(--font-family-display);
-	padding: 0.5rem 0 0.25rem;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-md);
+  line-height: 1.25;
+  padding: 0.5rem 0 0.4rem;
   margin: 0;
 }
 
+.titleLink {
+  color: var(--mainTextColor);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.titleLink:hover {
+  color: var(--accentColor);
+}
+
 .blogPreviewText {
-	margin: 0;
+  margin: 0;
   line-height: 1.7;
   color: var(--softTextColor);
 }
 
 .blogReadMoreLink {
-	padding-top: 1.5rem;
-	display: inline-flex;
+  margin-top: 1.25rem;
+  align-self: flex-start;
   text-decoration: none;
   font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm-plus);
 }

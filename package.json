@@ -20,8 +20,9 @@
   },
   "scripts": {
     "generate:og": "node scripts/generate-og-images.mjs",
-    "predev": "npm run generate:og",
-    "prebuild": "npm run generate:og",
+    "generate:feed": "node scripts/generate-feed.mjs",
+    "predev": "npm run generate:og && npm run generate:feed",
+    "prebuild": "npm run generate:og && npm run generate:feed",
     "dev": "next dev",
     "start": "next dev",
     "build": "next build"

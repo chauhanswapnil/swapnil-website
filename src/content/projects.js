@@ -9,6 +9,14 @@ export const projectsPageCopy = {
 
 export const featuredProjects = [
   {
+    slug: "orion",
+    title: "Orion",
+    hook: "A running app for iOS, built on Apple Health.",
+    summary:
+      "Orion reads your runs straight from HealthKit and turns them into routes, splits, streaks, records, and training analytics — VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
+    tech: ["Swift", "SwiftUI", "SwiftData", "iOS", "HealthKit"],
+  },
+  {
     slug: "vidpress",
     title: "VidPress",
     hook: "A video library viewer and compression app for iOS",

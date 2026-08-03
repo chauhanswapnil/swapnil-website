@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 
 import BlogContent from "../../../src/components/BlogContent";
-import { getAllBlogPosts, getBlogPostBySlug } from "../../../src/content/blogs";
+import {
+  getAdjacentPosts,
+  getAllBlogPosts,
+  getBlogPostBySlug,
+} from "../../../src/content/blogs";
 
 export function generateStaticParams() {
   return getAllBlogPosts().map((post) => ({
@@ -87,7 +91,7 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <BlogContent post={post} />
+      <BlogContent post={post} neighbours={getAdjacentPosts(post.slug)} />
     </>
   );
 }

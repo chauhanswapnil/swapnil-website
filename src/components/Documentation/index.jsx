@@ -1,6 +1,5 @@
 "use client";
 
-import { Row, Col } from "react-bootstrap";
 import DocsEditor from "../DocsEditor";
 
 import styles from "./index.module.css";
@@ -121,19 +120,26 @@ student.greetProfessor("Max");`,
 
 export default function Documentation() {
   return (
-    <div className={styles.documentationContainer}>
-      <h2 className={styles.docsHeading}>Documentation</h2>
-      <Row>
-        {docs.map((doc) => {
-          return (
-            <Col key={doc.heading} lg={6} sm={12} style={{ marginBottom: "2rem" }}>
-              <h3 className={styles.docsSubHeading}>{doc.heading}</h3>
-              <p className={styles.docsDesc}>{doc.desc}</p>
-              <DocsEditor code={doc.code} />
-            </Col>
-          );
-        })}
-      </Row>
-    </div>
+    <section className={styles.documentationContainer} aria-labelledby="docs-heading">
+      <div className={styles.docsHeader}>
+        <h2 id="docs-heading" className={styles.docsHeading}>
+          Language reference
+        </h2>
+        <p className={styles.docsIntro}>
+          Everything Lox can do, with a snippet for each. Copy any of it into
+          the editor above.
+        </p>
+      </div>
+
+      <div className={styles.docsGrid}>
+        {docs.map((doc) => (
+          <article key={doc.heading} className={styles.docsCard}>
+            <h3 className={styles.docsSubHeading}>{doc.heading}</h3>
+            <p className={styles.docsDesc}>{doc.desc}</p>
+            <DocsEditor code={doc.code} />
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

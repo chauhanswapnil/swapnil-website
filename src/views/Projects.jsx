@@ -1,4 +1,4 @@
-import ProjectCard from "../components/ProjectCard";
+import ProjectExplorer from "../components/ProjectExplorer";
 import TrackedLink from "../components/TrackedLink";
 import { featuredProjects, projectsPageCopy } from "../content/projects";
 import styles from "./projects.module.css";
@@ -9,7 +9,9 @@ export default function Projects() {
       <section className={styles.hero}>
         <p className={`${styles.eyebrow} mutedText`}>{projectsPageCopy.eyebrow}</p>
         <h1 className={styles.title}>{projectsPageCopy.title}</h1>
-        <p className={`${styles.description} softText`}>{projectsPageCopy.description}</p>
+        <p className={`${styles.description} softText`}>
+          {projectsPageCopy.description}
+        </p>
         <div className={styles.ctaRow}>
           <TrackedLink
             href={projectsPageCopy.githubUrl}
@@ -40,11 +42,7 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className={styles.grid}>
-        {featuredProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </section>
+      <ProjectExplorer projects={featuredProjects} />
     </div>
   );
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swapnil Chauhan</title>
+    <link>https://swapnilchauhan.com/blog/</link>
+    <description>Essays, engineering notes, and programming write-ups by Swapnil Chauhan.</description>
+    <language>en</language>
+    <managingEditor>mail@swapnilchauhan.com (Swapnil Chauhan)</managingEditor>
+    <lastBuildDate>Tue, 21 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://swapnilchauhan.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Lessons from three years as a software engineer in London</title>
+      <link>https://swapnilchauhan.com/blog/lessons-from-three-years-as-a-software-engineer-in-london/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/lessons-from-three-years-as-a-software-engineer-in-london/</guid>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+      <description>A reflection on three years of software engineering in London, and the next chapter: moving to the San Francisco Bay Area for a Master&apos;s in Engineering Management.</description>
+    </item>
+    <item>
+      <title>The AI Codebase</title>
+      <link>https://swapnilchauhan.com/blog/the-ai-codebase/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/the-ai-codebase/</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>AI makes it easier than ever to add code quickly. But I keep wondering what happens when nobody truly understands what has been added.</description>
+    </item>
+    <item>
+      <title>Plateauing</title>
+      <link>https://swapnilchauhan.com/blog/plateauing/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/plateauing/</guid>
+      <pubDate>Sat, 16 Aug 2025 00:00:00 GMT</pubDate>
+      <description>A reflective essay on growth, ambition, and what it feels like when progress gets harder to measure.</description>
+    </item>
+    <item>
+      <title>Pickle DNS - A Recursive DNS Resolver in Rust (Part 1)</title>
+      <link>https://swapnilchauhan.com/blog/recursive-dns-resolver-part-1/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/recursive-dns-resolver-part-1/</guid>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 GMT</pubDate>
+      <description>An introduction to DNS fundamentals and the first steps of building a recursive DNS resolver in Rust.</description>
+    </item>
+    <item>
+      <title>Procrastination and the Fear of Not Being &apos;Good Enough&apos;</title>
+      <link>https://swapnilchauhan.com/blog/procrastination-and-the-fear-of-not-being-good-enough/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/procrastination-and-the-fear-of-not-being-good-enough/</guid>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 GMT</pubDate>
+      <description>A personal piece about writing, self-doubt, and the quiet ways perfectionism can stall creative work.</description>
+    </item>
+    <item>
+      <title>Titanic Disaster Neural Network using Tensorflow and Google Colab and uploading it to Kaggle.</title>
+      <link>https://swapnilchauhan.com/blog/titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/titanic-disaster-neural-network-using-tensorflow-and-google-colab-and-uploading-it-to-kaggle/</guid>
+      <pubDate>Sat, 26 Jun 2021 00:00:00 GMT</pubDate>
+      <description>A walkthrough for building a Titanic classifier in TensorFlow, training it in Colab, and submitting predictions to Kaggle.</description>
+    </item>
+    <item>
+      <title>Guidelines, Roadmap and Resources for beginner to advanced iOS app development using Swift</title>
+      <link>https://swapnilchauhan.com/blog/guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/guidelines-roadmap-and-resources-for-beginner-to-advanced-ios-app-development-using-swift/</guid>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 GMT</pubDate>
+      <description>A curated roadmap and set of resources for learning iOS development with Swift from beginner to advanced levels.</description>
+    </item>
+  </channel>
+</rss>
