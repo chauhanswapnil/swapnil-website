@@ -1,0 +1,731 @@
+.page {
+  --orion-ink: #12110f;
+  --orion-muted: #5f5c55;
+  --orion-ivory: #f7f5ed;
+  --orion-paper: #fffdf8;
+  --orion-mint: #dcebdd;
+  --orion-lilac: #e8e2f4;
+  --orion-indigo: #5b6be0;
+  --orion-indigo-dark: #4352bf;
+  color: var(--orion-ink);
+  background: var(--orion-ivory);
+  color-scheme: light;
+  overflow: clip;
+}
+
+.page :where(h1, h2, h3, p) {
+  margin: 0;
+}
+
+.page :where(a) {
+  color: inherit;
+}
+
+.hero {
+  min-height: calc(100svh - 4.5rem);
+  display: grid;
+  align-items: center;
+  padding: clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 6vw, 6rem);
+  background-color: #f6f4ec;
+  background-image:
+    linear-gradient(90deg, rgba(247, 245, 237, 0.98) 0%, rgba(247, 245, 237, 0.84) 45%, rgba(247, 245, 237, 0.22) 100%),
+    url("/orion/marketing-background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.heroInner,
+.runsSection,
+.statsInner,
+.momentsInner,
+.privacyInner,
+.finalInner {
+  width: min(100%, 90rem);
+  margin-inline: auto;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: center;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+}
+
+.brandLockup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 5vw, 4.5rem);
+  font-family: var(--font-family-display);
+  font-size: clamp(1.7rem, 2.4vw, 2.5rem);
+  letter-spacing: -0.04em;
+}
+
+.brandIcon,
+.finalIcon {
+  border-radius: 24%;
+  box-shadow: 0 18px 40px rgba(49, 55, 104, 0.17);
+}
+
+.hero h1 {
+  max-width: 8.5ch;
+  font-family: var(--font-family-display);
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.065em;
+}
+
+.heroCopy > p {
+  max-width: 36rem;
+  margin-top: clamp(1.75rem, 3vw, 2.75rem);
+  color: var(--orion-muted);
+  font-size: clamp(1.1rem, 1.65vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.6rem;
+  align-items: center;
+  margin-top: 2.25rem;
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3.65rem;
+  padding: 0.9rem 1.35rem;
+  border-radius: 999px;
+  color: #fff !important;
+  background: var(--orion-indigo);
+  box-shadow: 0 14px 28px rgba(91, 107, 224, 0.24);
+  font-family: var(--font-family-body-strong);
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.primaryAction:hover {
+  color: #fff;
+  background: var(--orion-indigo-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(67, 82, 191, 0.3);
+}
+
+.primaryAction svg,
+.privacyLink svg {
+  width: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.textAction {
+  padding: 0.85rem 0.25rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--orion-ink);
+  font-family: var(--font-family-body-strong);
+  text-decoration: none;
+}
+
+.textAction:hover {
+  color: var(--orion-indigo-dark);
+}
+
+.heroVisual,
+.statsVisual,
+.momentsVisual {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.heroGlow,
+.statsOrb {
+  position: absolute;
+  width: min(42vw, 38rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(220, 235, 221, 0.8);
+  filter: blur(1px);
+}
+
+.heroPhone {
+  width: min(29vw, 26rem);
+  transform: rotate(2deg);
+}
+
+.phoneFrame {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  aspect-ratio: 1090 / 2252;
+  border-radius: 14.8% / 7.2%;
+  background:
+    linear-gradient(90deg, #454545 0%, #989898 1.2%, #2c2c2c 2.2%, #171717 4%, #171717 96%, #303030 97.8%, #8e8e8e 98.9%, #414141 100%);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.58) inset,
+    0 26px 60px rgba(39, 40, 49, 0.28),
+    0 5px 14px rgba(39, 40, 49, 0.18);
+}
+
+.phoneFrame::before {
+  position: absolute;
+  inset: 0.85%;
+  border-radius: 14.3% / 7%;
+  background: #0a0a0a;
+  content: "";
+}
+
+.phoneScreen {
+  position: absolute;
+  top: 1.64%;
+  right: 4.04%;
+  bottom: 1.64%;
+  left: 4.04%;
+  overflow: hidden;
+  border-radius: 12.6% / 5.9%;
+  background: #f7f7f2;
+}
+
+.phoneImage {
+  object-fit: cover;
+}
+
+.dynamicIsland {
+  position: absolute;
+  top: 1.45%;
+  left: 50%;
+  width: 29%;
+  height: 3.75%;
+  border-radius: 999px;
+  background: #050505;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.silenceSwitch,
+.volumeUp,
+.volumeDown,
+.sideButton {
+  position: absolute;
+  z-index: 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2c2c2c, #777, #242424);
+}
+
+.silenceSwitch {
+  top: 18.3%;
+  left: -0.9%;
+  width: 1%;
+  height: 4.1%;
+}
+
+.volumeUp {
+  top: 27.2%;
+  left: -0.9%;
+  width: 1%;
+  height: 6.2%;
+}
+
+.volumeDown {
+  top: 35.3%;
+  left: -0.9%;
+  width: 1%;
+  height: 6.2%;
+}
+
+.sideButton {
+  top: 28.2%;
+  right: -0.9%;
+  width: 1%;
+  height: 10.2%;
+}
+
+.runsSection {
+  padding: clamp(6rem, 11vw, 11rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--orion-paper);
+}
+
+.sectionHeading {
+  max-width: 61rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 1.15rem !important;
+  color: var(--orion-indigo-dark);
+  font-family: var(--font-family-body-strong);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2,
+.statsCopy h2,
+.momentsCopy h2,
+.privacyHeading h2,
+.finalInner h2 {
+  font-family: var(--font-family-display);
+  letter-spacing: -0.055em;
+}
+
+.sectionHeading h2 {
+  font-size: clamp(3.25rem, 6.2vw, 6.5rem);
+  line-height: 0.94;
+}
+
+.runsStage {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(30rem, 1.45fr) minmax(12rem, 1fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: center;
+  margin-top: clamp(5rem, 9vw, 8.5rem);
+}
+
+.featureCopy {
+  max-width: 18rem;
+}
+
+.featureNumber {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: var(--orion-indigo);
+  font-family: var(--font-family-body-strong);
+  font-size: 0.85rem;
+}
+
+.featureCopy h3 {
+  font-family: var(--font-family-display);
+  font-size: clamp(1.8rem, 2.9vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.featureCopy p,
+.statsCopy > p,
+.momentsCopy > p {
+  margin-top: 1.35rem;
+  color: var(--orion-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.mapCopy {
+  justify-self: end;
+}
+
+.phonePair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2.6vw, 2.2rem);
+  align-items: end;
+}
+
+.activitiesPhone,
+.mapPhone {
+  width: 100%;
+}
+
+.activitiesPhone {
+  transform: translateY(2.5rem) rotate(-2deg);
+}
+
+.mapPhone {
+  transform: translateY(-2.5rem) rotate(2deg);
+}
+
+.statsSection {
+  padding: clamp(6rem, 10vw, 10rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--orion-lilac);
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+.statsInner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  align-items: center;
+}
+
+.statsCopy {
+  max-width: 37rem;
+}
+
+.statsCopy h2,
+.momentsCopy h2,
+.privacyHeading h2 {
+  font-size: clamp(3.6rem, 6.7vw, 7rem);
+  line-height: 0.91;
+}
+
+.statsCopy > p,
+.momentsCopy > p {
+  max-width: 34rem;
+  font-size: clamp(1.08rem, 1.5vw, 1.32rem);
+}
+
+.statList,
+.privacyProofs {
+  padding: 0;
+  margin: 2.5rem 0 0;
+  list-style: none;
+}
+
+.statList {
+  display: grid;
+  gap: 1rem;
+}
+
+.statList li {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: #37333f;
+  font-family: var(--font-family-body-strong);
+}
+
+.statList svg {
+  width: 1.25rem;
+  fill: none;
+  stroke: var(--orion-indigo-dark);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.statsOrb {
+  width: min(42vw, 39rem);
+  background: rgba(255, 253, 248, 0.6);
+}
+
+.statsPhone {
+  width: min(28vw, 24.5rem);
+  transform: rotate(-2deg);
+}
+
+.momentsSection {
+  position: relative;
+  min-height: 62rem;
+  display: grid;
+  align-items: center;
+  padding: clamp(6rem, 10vw, 10rem) clamp(1.25rem, 6vw, 6rem);
+  background-color: #e7f0df;
+  background-image: url("/orion/route-map-background.png");
+  background-position: center;
+  background-size: cover;
+  content-visibility: auto;
+  contain-intrinsic-size: 950px;
+}
+
+.momentsShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(236, 243, 228, 0.2), rgba(247, 245, 237, 0.95) 72%);
+}
+
+.momentsInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(22rem, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(3rem, 10vw, 10rem);
+  align-items: center;
+}
+
+.momentsPhone {
+  width: min(29vw, 25rem);
+  transform: rotate(2deg);
+}
+
+.momentsCopy {
+  justify-self: end;
+  max-width: 44rem;
+}
+
+.privacySection {
+  padding: clamp(6rem, 10vw, 10rem) clamp(1.25rem, 6vw, 6rem);
+  color: #f5f3ec;
+  background: #11110f;
+  content-visibility: auto;
+  contain-intrinsic-size: 750px;
+}
+
+.privacyInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(28rem, 0.9fr);
+  gap: clamp(4rem, 10vw, 10rem);
+  align-items: start;
+}
+
+.privacyHeading {
+  max-width: 45rem;
+}
+
+.privacyHeading .eyebrow {
+  color: #aeb8ff;
+}
+
+.privacyLink {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 2.25rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.48);
+  color: #fff;
+  font-family: var(--font-family-body-strong);
+  text-decoration: none;
+}
+
+.privacyLink:hover {
+  border-color: #aeb8ff;
+  color: #aeb8ff;
+}
+
+.privacyProofs {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.privacyProofs li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.25rem 1rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.privacyProofs span {
+  grid-row: span 2;
+  color: #aeb8ff;
+  font-family: var(--font-family-body-strong);
+  font-size: 0.78rem;
+}
+
+.privacyProofs strong {
+  font-family: var(--font-family-heading);
+  font-size: 1.2rem;
+}
+
+.privacyProofs p {
+  color: rgba(245, 243, 236, 0.68);
+  line-height: 1.55;
+}
+
+.finalSection {
+  padding: clamp(4rem, 7vw, 6.5rem) clamp(1.25rem, 6vw, 6rem);
+  background: var(--orion-paper);
+}
+
+.finalInner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  align-items: center;
+}
+
+.finalInner .eyebrow {
+  margin-bottom: 0.55rem !important;
+}
+
+.finalInner h2 {
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: 1;
+}
+
+.finalIcon {
+  width: clamp(4.75rem, 8vw, 7rem);
+  height: auto;
+}
+
+@media (max-width: 1050px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.7fr);
+    gap: 3rem;
+  }
+
+  .heroPhone {
+    width: min(36vw, 23rem);
+  }
+
+  .runsStage {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCopy h3 {
+    font-size: 2rem;
+  }
+
+  .statsPhone,
+  .momentsPhone {
+    width: min(34vw, 23rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 5.5rem;
+    background-image:
+      linear-gradient(rgba(247, 245, 237, 0.78), rgba(247, 245, 237, 0.5)),
+      url("/orion/marketing-background.png");
+  }
+
+  .heroInner,
+  .statsInner,
+  .momentsInner,
+  .privacyInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroInner {
+    gap: 4.5rem;
+  }
+
+  .brandLockup {
+    margin-bottom: 2.5rem;
+  }
+
+  .brandIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.7rem, 17vw, 5.5rem);
+  }
+
+  .heroPhone {
+    width: min(78vw, 22rem);
+  }
+
+  .heroGlow {
+    width: 100vw;
+  }
+
+  .runsSection {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+
+  .sectionHeading {
+    text-align: left;
+  }
+
+  .sectionHeading h2 {
+    font-size: clamp(3.4rem, 15vw, 5rem);
+  }
+
+  .runsStage {
+    grid-template-columns: 1fr;
+    margin-top: 4.5rem;
+  }
+
+  .featureCopy {
+    max-width: 28rem;
+  }
+
+  .mapCopy {
+    justify-self: start;
+  }
+
+  .phonePair {
+    grid-row: 2;
+    gap: 0.85rem;
+    padding: 1rem 0 4rem;
+  }
+
+  .activitiesPhone,
+  .mapPhone {
+    transform: none;
+  }
+
+  .statsSection,
+  .momentsSection,
+  .privacySection {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .statsInner,
+  .momentsInner {
+    gap: 4.5rem;
+  }
+
+  .statsCopy h2,
+  .momentsCopy h2,
+  .privacyHeading h2 {
+    font-size: clamp(3.5rem, 15vw, 5.2rem);
+  }
+
+  .statsVisual {
+    grid-row: 2;
+  }
+
+  .statsOrb {
+    width: 100vw;
+  }
+
+  .statsPhone,
+  .momentsPhone {
+    width: min(74vw, 22rem);
+  }
+
+  .momentsSection {
+    min-height: auto;
+  }
+
+  .momentsShade {
+    background: linear-gradient(rgba(241, 245, 233, 0.7), rgba(247, 245, 237, 0.95));
+  }
+
+  .momentsVisual {
+    grid-row: 2;
+  }
+
+  .momentsCopy {
+    justify-self: start;
+  }
+
+  .privacyInner {
+    gap: 4rem;
+  }
+
+  .finalInner {
+    grid-template-columns: auto 1fr;
+  }
+
+  .finalInner .primaryAction {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction {
+    transition: none;
+  }
+
+  .primaryAction:hover {
+    transform: none;
+  }
+}
