@@ -3,6 +3,7 @@
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--codeBorder);
+  background: var(--codeSurface);
 }
 
 .toolbar {
@@ -11,8 +12,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.4rem 0.75rem;
-  background: #232730;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--codeSurfaceBar);
+  border-bottom: 1px solid var(--codeBorder);
 }
 
 .language {
@@ -20,6 +21,81 @@
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(233, 240, 248, 0.5);
+  color: var(--codeComment);
 }
 
+.code {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  background: transparent;
+  color: var(--codeText);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+/* Prism emits these class names once useInlineStyles is off. Colours come from
+   the shared --code* variables, so a code block follows the theme toggle
+   instead of staying dark on a light page. */
+.code :global(.token.comment),
+.code :global(.token.prolog),
+.code :global(.token.doctype),
+.code :global(.token.cdata) {
+  color: var(--codeComment);
+  font-style: italic;
+}
+
+.code :global(.token.punctuation),
+.code :global(.token.operator) {
+  color: var(--codePunctuation);
+}
+
+.code :global(.token.keyword),
+.code :global(.token.boolean),
+.code :global(.token.atrule),
+.code :global(.token.important),
+.code :global(.token.selector),
+.code :global(.token.rule) {
+  color: var(--codeKeyword);
+}
+
+.code :global(.token.string),
+.code :global(.token.char),
+.code :global(.token.attr-value),
+.code :global(.token.regex),
+.code :global(.token.url) {
+  color: var(--codeString);
+}
+
+.code :global(.token.number),
+.code :global(.token.constant),
+.code :global(.token.symbol),
+.code :global(.token.builtin) {
+  color: var(--codeNumber);
+}
+
+.code :global(.token.function),
+.code :global(.token.class-name),
+.code :global(.token.tag),
+.code :global(.token.attr-name),
+.code :global(.token.property) {
+  color: var(--codeFunction);
+}
+
+.code :global(.token.deleted) {
+  color: var(--codeNumber);
+}
+
+.code :global(.token.inserted) {
+  color: var(--codeString);
+}
+
+.code :global(.token.bold) {
+  font-weight: 600;
+}
+
+.code :global(.token.italic) {
+  font-style: italic;
+}

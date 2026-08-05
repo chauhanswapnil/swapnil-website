@@ -1,19 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
+import useIsMac from "../../lib/useIsMac";
 import styles from "./index.module.css";
 
 // The visible half of the command palette. The palette itself lives in the
 // layout and listens for this event, so the two can sit anywhere.
 export default function SearchButton() {
-  const [modifier, setModifier] = useState("⌘");
-
-  useEffect(() => {
-    if (!/Mac|iPhone|iPad/.test(window.navigator.platform)) {
-      setModifier("Ctrl");
-    }
-  }, []);
+  const modifier = useIsMac() ? "⌘" : "Ctrl";
 
   return (
     <button

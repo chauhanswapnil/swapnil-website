@@ -1,6 +1,7 @@
 import BlogPreview from "../components/BlogPreview";
 import LoxTerminal from "../components/LoxTerminal";
 import ProjectCard from "../components/ProjectCard";
+import ShortcutHint from "../components/ShortcutHint";
 import TrackedLink from "../components/TrackedLink";
 import { currently, heroProgram, site } from "../content/site";
 import styles from "./home.module.css";
@@ -44,10 +45,10 @@ export default function Home({ featuredPosts, featuredProjects }) {
             </TrackedLink>
           </div>
 
-          <p className={styles.shortcutHint}>
-            Press <kbd className={styles.kbd}>⌘</kbd>
-            <kbd className={styles.kbd}>K</kbd> to search this site.
-          </p>
+          <ShortcutHint
+            className={styles.shortcutHint}
+            kbdClassName={styles.kbd}
+          />
         </div>
 
         <div className={styles.heroTerminal}>

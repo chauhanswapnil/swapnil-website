@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import styles from "./index.module.css";
 
@@ -73,7 +73,6 @@ export default function LoxTerminal({ program, href = "/playground" }) {
   const [typed, setTyped] = useState(0);
   const [outputShown, setOutputShown] = useState(0);
   const [runId, setRunId] = useState(0);
-  const bodyRef = useRef(null);
 
   const total = program.source.length;
   const finishedTyping = typed >= total;
@@ -89,11 +88,21 @@ export default function LoxTerminal({ program, href = "/playground" }) {
     setOutputShown(0);
 
     let frame = 0;
+    let position = 0;
+
     const timer = setInterval(() => {
       frame += 1;
       // Type in small bursts so it reads like someone at a keyboard rather
       // than a character-per-frame ticker.
-      setTyped((current) => Math.min(total, current + (frame % 3 === 0 ? 3 : 2)));
+      position = Math.min(total, position + (frame % 3 === 0 ? 3 : 2));
+      setTyped(position);
+
+      // Stop at the end of the program. React bails out of the re-render once
+      // the value stops changing, so without this the interval would go on
+      // firing for as long as the page stayed open.
+      if (position >= total) {
+        clearInterval(timer);
+      }
     }, 26);
 
     return () => clearInterval(timer);
@@ -149,7 +158,7 @@ export default function LoxTerminal({ program, href = "/playground" }) {
         </button>
       </figcaption>
 
-      <div className={styles.body} ref={bodyRef}>
+      <div className={styles.body}>
         <pre className={styles.code}>
           <code>
             {visible.map((token, index) => (
@@ -164,8 +173,10 @@ export default function LoxTerminal({ program, href = "/playground" }) {
         </pre>
 
         <div className={styles.output} aria-live="off">
-          {program.output.slice(0, outputShown).map((line) => (
-            <p key={line} className={styles.outputLine}>
+          {/* Keyed by position, not by text: a program that prints the same
+              line twice is ordinary, and duplicate keys are not. */}
+          {program.output.slice(0, outputShown).map((line, index) => (
+            <p key={index} className={styles.outputLine}>
               <span className={styles.arrow} aria-hidden="true">
                 ›
               </span>

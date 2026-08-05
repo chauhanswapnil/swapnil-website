@@ -4,20 +4,13 @@ import path from "path";
 import { cache } from "react";
 import matter from "gray-matter";
 
-const BLOG_POSTS_DIRECTORY = path.join(process.cwd(), "src", "blogmd");
+import {
+  normaliseHeadingText,
+  slugifyHeading,
+  stripMarkdown,
+} from "../lib/markdown.mjs";
 
-function stripMarkdown(markdown) {
-  return markdown
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/!\[.*?\]\(.*?\)/g, "")
-    .replace(/\[([^\]]+)\]\(.*?\)/g, "$1")
-    .replace(/^#+\s+/gm, "")
-    .replace(/^>\s+/gm, "")
-    .replace(/[*_~]/g, "")
-    .replace(/\n+/g, " ")
-    .trim();
-}
+const BLOG_POSTS_DIRECTORY = path.join(process.cwd(), "src", "blogmd");
 
 function formatDate(dateString) {
   return new Intl.DateTimeFormat("en-US", {
@@ -33,17 +26,6 @@ const WORDS_PER_MINUTE = 220;
 function countWords(markdown) {
   const words = stripMarkdown(markdown).split(/\s+/).filter(Boolean);
   return words.length;
-}
-
-function slugifyHeading(text) {
-  return (
-    text
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-") || "section"
-  );
 }
 
 // Pull the section headings out of a post so article pages can render a
@@ -72,7 +54,7 @@ function extractHeadings(markdown) {
       continue;
     }
 
-    const text = match[2].replace(/[*_`]/g, "").trim();
+    const text = normaliseHeadingText(match[2]);
     const baseId = slugifyHeading(text);
     const count = seen.get(baseId) || 0;
     seen.set(baseId, count + 1);

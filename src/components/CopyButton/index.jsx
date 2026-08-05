@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+import useIsMac from "../../lib/useIsMac";
 import styles from "./index.module.css";
 
 // Kept apart from CodeBlock so the syntax highlighter can stay on the
 // server and out of the page's JavaScript bundle.
 export default function CopyButton({ code }) {
   const [label, setLabel] = useState("Copy");
+  const isMac = useIsMac();
 
   useEffect(() => {
     if (label === "Copy") {
@@ -22,7 +24,7 @@ export default function CopyButton({ code }) {
       await navigator.clipboard.writeText(code);
       setLabel("Copied");
     } catch {
-      setLabel("Press ⌘C");
+      setLabel(isMac ? "Press ⌘C" : "Press Ctrl+C");
     }
   }
 

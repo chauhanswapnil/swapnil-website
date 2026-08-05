@@ -94,7 +94,7 @@ export default function Footer() {
         <div className={styles.blurb}>
           <p className={styles.name}>{site.name}</p>
           <p className={styles.note}>
-            Written and built in London. Say hello — I answer my email.
+            Written and built by me. Say hello — I answer my email.
           </p>
         </div>
 

@@ -5,6 +5,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+import { stripMarkdown } from "../src/lib/markdown.mjs";
+
 const ROOT = process.cwd();
 const BLOG_DIR = path.join(ROOT, "src", "blogmd");
 const OUTPUT_FILE = path.join(ROOT, "public", "feed.xml");
@@ -24,37 +26,39 @@ function escapeXml(value) {
     .replaceAll("'", "&apos;");
 }
 
-function stripMarkdown(markdown) {
-  return markdown
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/!\[.*?\]\(.*?\)/g, "")
-    .replace(/\[([^\]]+)\]\(.*?\)/g, "$1")
-    .replace(/^#+\s+/gm, "")
-    .replace(/^>\s+/gm, "")
-    .replace(/[*_~]/g, "")
-    .replace(/\n+/g, " ")
-    .trim();
+// A post missing its slug or date would otherwise reach subscribers as a link
+// to /blog/undefined/ with an Invalid Date on it. Fail the build instead.
+function readPost(filename) {
+  const source = fs.readFileSync(path.join(BLOG_DIR, filename), "utf8");
+  const { data, content } = matter(source);
+
+  for (const field of ["slug", "title", "date"]) {
+    if (!data[field]) {
+      throw new Error(`${filename}: frontmatter is missing "${field}".`);
+    }
+  }
+
+  const date = new Date(data.date);
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`${filename}: "${data.date}" is not a date.`);
+  }
+
+  return {
+    slug: data.slug,
+    title: data.title,
+    date,
+    description:
+      data.description ||
+      data.excerpt ||
+      `${stripMarkdown(content).slice(0, 240).trimEnd()}...`,
+  };
 }
 
 function readPosts() {
   return fs
     .readdirSync(BLOG_DIR)
     .filter((filename) => filename.endsWith(".md"))
-    .map((filename) => {
-      const source = fs.readFileSync(path.join(BLOG_DIR, filename), "utf8");
-      const { data, content } = matter(source);
-
-      return {
-        slug: data.slug,
-        title: data.title,
-        date: new Date(data.date),
-        description:
-          data.description ||
-          data.excerpt ||
-          `${stripMarkdown(content).slice(0, 240).trimEnd()}...`,
-      };
-    })
+    .map(readPost)
     .sort((left, right) => right.date - left.date);
 }
 
@@ -70,6 +74,9 @@ function renderItem(post) {
     </item>`;
 }
 
+// Both dates track the newest post rather than the wall clock. The feed is
+// committed to the repo, so a build-time stamp would rewrite the file on every
+// build and leave a dirty tree behind.
 function renderFeed(posts) {
   const latest = posts[0]?.date ?? new Date(0);
 
@@ -81,6 +88,7 @@ function renderFeed(posts) {
     <description>${escapeXml(SITE_DESCRIPTION)}</description>
     <language>en</language>
     <managingEditor>mail@swapnilchauhan.com (${escapeXml(AUTHOR)})</managingEditor>
+    <pubDate>${latest.toUTCString()}</pubDate>
     <lastBuildDate>${latest.toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
 ${posts.map(renderItem).join("\n")}

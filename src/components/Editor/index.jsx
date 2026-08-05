@@ -1,25 +1,43 @@
 "use client";
 
 import CodeEditor from "@uiw/react-textarea-code-editor";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { defaultExample, loxExamples } from "../../content/loxExamples";
 import { trackEvent } from "../../lib/analytics";
+import useIsMac from "../../lib/useIsMac";
 import TrackedLink from "../TrackedLink";
 import styles from "./index.module.css";
 
 const LOX_API = "https://loxapi.swapnilchauhan.com/loxJava";
 const SOURCE_REPO = "https://github.com/chauhanswapnil/Slox";
 
+// Give up on the interpreter after this long. Without it a server that accepts
+// the connection and then goes quiet leaves the page stuck on "Running…" with
+// no way out but a reload.
+const RUN_TIMEOUT_MS = 15000;
+
+// Browsers and servers start dropping URLs somewhere above 2000 characters, and
+// base64 adds a third on top of the source. Refuse to build a link that would
+// arrive truncated — a truncated program is worse than no link.
+const MAX_SHARE_URL = 2000;
+
 // Programs travel in the URL fragment so a link carries the code with it
 // and nothing has to be stored anywhere.
 function encodeProgram(code) {
-  return btoa(unescape(encodeURIComponent(code)));
+  const bytes = new TextEncoder().encode(code);
+  let binary = "";
+  for (const byte of bytes) {
+    binary += String.fromCharCode(byte);
+  }
+  return btoa(binary);
 }
 
 function decodeProgram(encoded) {
   try {
-    return decodeURIComponent(escape(atob(encoded)));
+    const binary = atob(encoded);
+    const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
   } catch {
     return null;
   }
@@ -31,13 +49,13 @@ export default function Editor() {
   const [output, setOutput] = useState(null);
   const [status, setStatus] = useState("idle");
   const [shareLabel, setShareLabel] = useState("Copy link");
-  const [modifier, setModifier] = useState("⌘");
+  const isMac = useIsMac();
+  const modifier = isMac ? "⌘" : "Ctrl";
+
+  const running = status === "running";
+  const shareTimer = useRef(null);
 
   useEffect(() => {
-    if (!/Mac|iPhone|iPad/.test(window.navigator.platform)) {
-      setModifier("Ctrl");
-    }
-
     if (window.location.hash.startsWith("#code=")) {
       const decoded = decodeProgram(window.location.hash.slice("#code=".length));
       if (decoded) {
@@ -46,6 +64,8 @@ export default function Editor() {
       }
     }
   }, []);
+
+  useEffect(() => () => clearTimeout(shareTimer.current), []);
 
   const runCode = useCallback(async () => {
     setStatus("running");
@@ -57,6 +77,7 @@ export default function Editor() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),
+        signal: AbortSignal.timeout(RUN_TIMEOUT_MS),
       });
 
       const result = await response.text();
@@ -73,25 +94,31 @@ export default function Editor() {
       setOutput(result.trim() || "The program finished without printing anything.");
       setStatus("success");
     } catch {
-      // A rejected fetch means the request never landed: the server is down,
-      // or something on the network blocked it.
+      // Either the request never landed — server down, network blocked it — or
+      // it landed and the answer never came and the timeout fired. Both leave
+      // the reader in the same place, so both read the same way.
       setStatus("offline");
       setOutput(null);
     }
   }, [activeExample, code]);
 
-  // Cmd/Ctrl+Enter runs from anywhere on the page, including the editor.
+  // Cmd/Ctrl+Enter runs from anywhere on the page, including the editor. The
+  // Run button is disabled while a program is in flight; the shortcut has to
+  // check for itself, or holding the keys queues up overlapping requests and
+  // whichever answers last wins the output pane.
   useEffect(() => {
     function onKeyDown(event) {
       if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {
         event.preventDefault();
-        runCode();
+        if (!running) {
+          runCode();
+        }
       }
     }
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [runCode]);
+  }, [runCode, running]);
 
   function loadExample(example) {
     setCode(example.code);
@@ -105,16 +132,22 @@ export default function Editor() {
   async function copyShareLink() {
     const url = `${window.location.origin}${window.location.pathname}#code=${encodeProgram(code)}`;
 
-    try {
-      await navigator.clipboard.writeText(url);
-      window.history.replaceState(null, "", url);
-      setShareLabel("Copied");
-      trackEvent("playground_share", {});
-    } catch {
-      setShareLabel("Could not copy");
+    clearTimeout(shareTimer.current);
+
+    if (url.length > MAX_SHARE_URL) {
+      setShareLabel("Program too long to link");
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        window.history.replaceState(null, "", url);
+        setShareLabel("Copied");
+        trackEvent("playground_share", {});
+      } catch {
+        setShareLabel("Could not copy");
+      }
     }
 
-    setTimeout(() => setShareLabel("Copy link"), 1800);
+    shareTimer.current = setTimeout(() => setShareLabel("Copy link"), 2400);
   }
 
   const failed = status === "error" || status === "offline";
@@ -185,9 +218,7 @@ export default function Editor() {
               </p>
             ) : null}
 
-            {status === "running" ? (
-              <p className={styles.placeholder}>Running…</p>
-            ) : null}
+            {running ? <p className={styles.placeholder}>Running…</p> : null}
 
             {status === "success" ? (
               <pre className={styles.stream}>{output}</pre>
@@ -239,9 +270,9 @@ export default function Editor() {
           type="button"
           onClick={runCode}
           className={styles.runButton}
-          disabled={status === "running"}
+          disabled={running}
         >
-          {status === "running" ? "Running…" : "Run"}
+          {running ? "Running…" : "Run"}
         </button>
         <button
           type="button"

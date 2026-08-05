@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import recentPRMerged from "../../images/recent-pr-merged.png";
+import { slugifyHeading } from "../../lib/markdown.mjs";
 import CodeBlock from "../CodeBlock";
 import PostNav from "../PostNav";
 import ReadingProgress from "../ReadingProgress";
@@ -40,28 +41,54 @@ function textFromChildren(children) {
   return children?.props?.children ? textFromChildren(children.props.children) : "";
 }
 
-function slugifyHeading(children) {
-  return (
-    textFromChildren(children)
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-") || "section"
-  );
-}
-
 export default function BlogContent({ post, neighbours }) {
-  const headingCounts = new Map();
+  // The contents list is built from the raw markdown in blogs.js; the article
+  // body is built from rendered React children. Rather than slugify twice and
+  // hope the two agree, walk the list blogs.js already produced and hand each
+  // h2–h4 the id the sidebar is going to link to.
+  //
+  // h1 is deliberately outside that walk: extractHeadings only collects h2–h4,
+  // so letting an h1 draw from the queue would shift every id after it.
+  const tocQueue = (post.headings || []).map((heading) => ({ ...heading }));
 
-  function headingId(children) {
-    const baseId = slugifyHeading(children);
-    const count = headingCounts.get(baseId) || 0;
-    headingCounts.set(baseId, count + 1);
-    return count === 0 ? baseId : `${baseId}-${count + 1}`;
+  // Every id the contents list is going to link to, claimed up front. An h1
+  // that happens to repeat an h2's wording then has to pick a different id
+  // rather than minting a duplicate of one already spoken for.
+  const usedIds = new Set(tocQueue.map((heading) => heading.id));
+
+  function localId(text) {
+    const baseId = slugifyHeading(text);
+
+    let candidate = baseId;
+    let suffix = 1;
+    while (usedIds.has(candidate)) {
+      suffix += 1;
+      candidate = `${baseId}-${suffix}`;
+    }
+
+    usedIds.add(candidate);
+    return candidate;
+  }
+
+  function headingId(text, fromToc) {
+    if (fromToc) {
+      const slug = slugifyHeading(text);
+      const match = tocQueue.find(
+        (heading) => !heading.used && slugifyHeading(heading.text) === slug,
+      );
+
+      if (match) {
+        match.used = true;
+        return match.id;
+      }
+    }
+
+    return localId(text);
   }
 
   function renderHeading(Tag) {
+    const fromToc = Tag !== "h1";
+
     return function Heading({ children, id: existingId, level, node, ...props }) {
       if (existingId === "footnote-label") {
         return (
@@ -71,7 +98,7 @@ export default function BlogContent({ post, neighbours }) {
         );
       }
 
-      const id = existingId || headingId(children);
+      const id = existingId || headingId(textFromChildren(children), fromToc);
 
       return (
         <Tag id={id} {...props}>

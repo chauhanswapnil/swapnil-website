@@ -15,6 +15,7 @@ export const featuredProjects = [
     summary:
       "Orion reads your runs straight from HealthKit and turns them into routes, splits, streaks, records, and training analytics — VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
     tech: ["Swift", "SwiftUI", "SwiftData", "iOS", "HealthKit"],
+    demoUrl: "/orion",
   },
   {
     slug: "vidpress",

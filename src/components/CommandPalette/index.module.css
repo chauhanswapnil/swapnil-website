@@ -100,11 +100,6 @@
   background: var(--subtleSurfaceHover);
 }
 
-.row:focus-visible {
-  outline-offset: -2px !important;
-  box-shadow: none !important;
-}
-
 .rowText {
   flex: 1;
   min-width: 0;

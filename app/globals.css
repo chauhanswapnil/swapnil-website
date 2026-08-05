@@ -66,6 +66,8 @@
   --codeString: #9ad9a6;
   --codeNumber: #f6c177;
   --codeComment: rgba(233, 240, 248, 0.42);
+  --codeFunction: #82aaff;
+  --codePunctuation: rgba(233, 240, 248, 0.55);
 
   --shadowSoft: 0 18px 45px -30px rgba(0, 0, 0, 0.9);
   --overlayScrim: rgba(8, 11, 15, 0.6);
@@ -81,6 +83,8 @@ html[data-theme="light"] {
   --codeString: #276749;
   --codeNumber: #9a5b12;
   --codeComment: rgba(24, 32, 42, 0.48);
+  --codeFunction: #1a4f9c;
+  --codePunctuation: rgba(24, 32, 42, 0.6);
 
   --shadowSoft: 0 18px 40px -32px rgba(28, 35, 48, 0.55);
   --overlayScrim: rgba(30, 26, 18, 0.35);
