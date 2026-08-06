@@ -3,7 +3,6 @@
 
 export const site = {
   name: "Swapnil Chauhan",
-  role: "Backend software engineer",
   url: "https://swapnilchauhan.com",
   email: "mail@swapnilchauhan.com",
   githubUrl: "https://github.com/chauhanswapnil",

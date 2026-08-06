@@ -125,8 +125,21 @@ body {
   margin: 0;
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
+  /* Was inherited from Bootstrap's Reboot until Bootstrap came out. Nothing on
+     the site used a Bootstrap class, but every block of text leaned on these
+     two line-heights, so they stay. */
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
 }
 
 .skipLink {
