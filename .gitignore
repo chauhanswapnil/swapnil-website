@@ -34,3 +34,6 @@ VERSION
 !.vscode/snippets
 !.vscode/launch.json
 !.vscode/settings.json
+
+# local agent/editor tooling
+.claude/

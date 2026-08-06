@@ -1,5 +1,6 @@
 import Home from "../src/views/Home";
 import { getFeaturedBlogPosts } from "../src/content/blogs";
+import { featuredProjects } from "../src/content/projects";
 
 export const metadata = {
   title: "Swapnil Chauhan",
@@ -61,7 +62,10 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Home featuredPosts={getFeaturedBlogPosts(3)} />
+      <Home
+        featuredPosts={getFeaturedBlogPosts(3)}
+        featuredProjects={featuredProjects.slice(0, 3)}
+      />
     </>
   );
 }

@@ -1,105 +1,260 @@
-.editorContainer {
-  max-height: 500px;
-  overflow: auto;
-  margin: 2rem auto;
-  width: 90%;
-  border-radius: var(--radiusMedia);
-}
-
-.editorHeading {
-  margin: 3rem auto 0.5rem;
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-lg);
-}
-
-.instructions {
-  width: 90%;
+.playground {
+  width: min(90%, 100%);
   margin: 0 auto;
+}
+
+/* Example picker */
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.examplesLabel {
+  margin-right: 0.35rem;
+  color: var(--mutedTextColor);
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.example {
+  border: 1px solid var(--borderSubtle);
+  border-radius: 999px;
+  background: var(--subtleSurface);
   color: var(--softTextColor);
+  padding: 0.35rem 0.9rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.example:hover {
+  border-color: var(--borderStrongHover);
+  color: var(--mainTextColor);
+}
+
+.exampleActive {
+  border-color: var(--accentColor);
+  background: color-mix(in srgb, var(--accentColor) 14%, transparent);
+  color: var(--accentColor);
+}
+
+/* Editor and output side by side */
+
+.panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--borderSubtle);
+  border-radius: var(--radiusMedia);
+  background: var(--codeSurface);
+  overflow: hidden;
+}
+
+.paneBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--codeBorder);
+  background: var(--codeSurfaceBar);
+}
+
+.paneTitle {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  color: var(--codeComment);
+}
+
+.paneHint {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  color: var(--codeComment);
+}
+
+.statusDot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--codeBorder);
+}
+
+.dot_running {
+  background: var(--accentColor);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.dot_success {
+  background: #4ea87a;
+}
+
+.dot_error,
+.dot_offline {
+  background: #d1685f;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.editorScroll {
+  flex: 1;
+  max-height: 30rem;
+  overflow: auto;
 }
 
 .editor {
-  font-size: var(--font-size-base);
-  /* background-color: var(--editorBackgroundColor); */
-  color: var(--mainTextColor) !important;
-  font-family: var(--font-family-mono);
+  font-size: 0.9rem;
+  background-color: transparent !important;
+  color: var(--codeText) !important;
+  font-family: var(--font-family-mono) !important;
 }
 
 .editor textarea:focus-visible {
-  outline: 3px solid var(--accentColor) !important;
-  outline-offset: -3px;
+  outline: 2px solid var(--accentColor) !important;
+  outline-offset: -2px;
+  box-shadow: none !important;
 }
+
+/* Output */
+
+.outputArea {
+  flex: 1;
+  max-height: 30rem;
+  overflow: auto;
+  padding: 1rem;
+  color: var(--codeText);
+}
+
+.placeholder {
+  margin: 0;
+  color: var(--codeComment);
+  font-family: var(--font-family-mono);
+  font-size: 0.86rem;
+}
+
+.stream {
+  margin: 0;
+  font-family: var(--font-family-mono);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--codeString);
+}
+
+.errorStream {
+  color: #e08b83;
+}
+
+.errorTitle {
+  margin: 0 0 0.6rem;
+  color: #e08b83;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm-plus);
+}
+
+.offline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.offlineBody {
+  margin: 0;
+  color: var(--codeComment);
+  font-size: var(--font-size-sm-plus);
+  line-height: 1.65;
+}
+
+/* Actions */
 
 .buttonsContainer {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 
-.runButton {
-  background-color: var(--mainTextColor);
-  border: solid 2px var(--mainTextColor);
-  border-radius: 0.5rem;
-  color: var(--buttonTextColor);
-  padding: 0.3rem 2rem;
+.runButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.6rem 2rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm-plus);
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  font-family: var(--font-family-body-strong);
-  margin: 0 1rem;
+  cursor: pointer;
   transition:
     background-color 0.2s ease,
+    border-color 0.2s ease,
     color 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.2s ease;
 }
 
-.runButton:hover {
-  background-color: var(--editorBackgroundColor);
-  color: var(--mainTextColor);
+.runButton {
+  border: 1px solid var(--accentColor);
+  background-color: var(--accentColor);
+  color: var(--secondaryTextColor);
+}
+
+.runButton:hover:not(:disabled) {
+  background-color: var(--accentColorHover);
+  border-color: var(--accentColorHover);
+  transform: translateY(-2px);
 }
 
 .runButton:disabled {
   cursor: wait;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
-.results {
-  width: 90%;
-  margin: 2rem auto;
-  text-align: left;
-}
-
-.outputHeading {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-lg);
-}
-
-.outputArea {
-  margin: 0.75rem 0 0;
-  width: 100%;
-  min-height: 4rem;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  border: solid 1px var(--mainTextColor);
+.secondaryButton {
+  border: 1px solid var(--borderStrong);
+  background: transparent;
   color: var(--mainTextColor);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  text-align: left;
-  overflow-x: auto;
 }
 
-.error {
-  border-width: 2px;
-  border-left: 0.5rem solid var(--accentColor);
+.secondaryButton:hover {
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {
-  .runButton {
-    width: min(16rem, 100%);
-    margin: 0;
+  .panes {
+    grid-template-columns: 1fr;
+  }
+
+  .outputArea {
+    min-height: 9rem;
+  }
+
+  .runButton,
+  .secondaryButton {
+    width: min(18rem, 100%);
   }
 }

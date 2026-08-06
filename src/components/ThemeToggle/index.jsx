@@ -37,6 +37,13 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  // The command palette can switch themes too, so keep the label in step.
+  useEffect(() => {
+    const onThemeChange = (event) => setTheme(event.detail.theme);
+    window.addEventListener("themechange", onThemeChange);
+    return () => window.removeEventListener("themechange", onThemeChange);
+  }, []);
+
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);

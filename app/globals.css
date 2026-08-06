@@ -54,6 +54,40 @@
   --pagePaddingMobile: 1rem;
   --radiusCard: 0.75rem;
   --radiusMedia: 0.9rem;
+
+  /* Code surfaces: the hero terminal and anything else that should read as
+     an editor rather than as page copy. */
+  --codeSurface: #11161d;
+  --codeSurfaceBar: rgba(255, 255, 255, 0.03);
+  --codeSurfaceHover: rgba(255, 255, 255, 0.06);
+  --codeBorder: rgba(255, 255, 255, 0.1);
+  --codeText: rgba(233, 240, 248, 0.88);
+  --codeKeyword: #c792ea;
+  --codeString: #9ad9a6;
+  --codeNumber: #f6c177;
+  --codeComment: rgba(233, 240, 248, 0.42);
+  --codeFunction: #82aaff;
+  --codePunctuation: rgba(233, 240, 248, 0.55);
+
+  --shadowSoft: 0 18px 45px -30px rgba(0, 0, 0, 0.9);
+  --overlayScrim: rgba(8, 11, 15, 0.6);
+}
+
+html[data-theme="light"] {
+  --codeSurface: #fbf8f1;
+  --codeSurfaceBar: rgba(28, 35, 48, 0.03);
+  --codeSurfaceHover: rgba(28, 35, 48, 0.06);
+  --codeBorder: rgba(28, 35, 48, 0.12);
+  --codeText: rgba(24, 32, 42, 0.9);
+  --codeKeyword: #8250a8;
+  --codeString: #276749;
+  --codeNumber: #9a5b12;
+  --codeComment: rgba(24, 32, 42, 0.48);
+  --codeFunction: #1a4f9c;
+  --codePunctuation: rgba(24, 32, 42, 0.6);
+
+  --shadowSoft: 0 18px 40px -32px rgba(28, 35, 48, 0.55);
+  --overlayScrim: rgba(30, 26, 18, 0.35);
 }
 
 html[data-theme="light"] {
@@ -91,8 +125,21 @@ body {
   margin: 0;
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
+  /* Was inherited from Bootstrap's Reboot until Bootstrap came out. Nothing on
+     the site used a Bootstrap class, but every block of text leaned on these
+     two line-heights, so they stay. */
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
 }
 
 .skipLink {

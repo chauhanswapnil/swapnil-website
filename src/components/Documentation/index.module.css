@@ -1,25 +1,55 @@
 .documentationContainer {
-  margin: 5rem var(--pagePadding) 0;
+  width: min(90%, 100%);
+  margin: 5rem auto 0;
   color: var(--mainTextColor);
 }
 
+.docsHeader {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--borderSubtle);
+}
+
 .docsHeading {
-  margin-bottom: 3rem;
-  font-family: var(--font-family-heading);
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-lg);
+}
+
+.docsIntro {
+  margin: 0.6rem 0 0;
+  color: var(--softTextColor);
+  font-family: var(--font-family-body);
+  line-height: 1.7;
+}
+
+.docsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.docsCard {
+  min-width: 0;
 }
 
 .docsSubHeading {
+  margin: 0 0 0.4rem;
   font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
 }
 
 .docsDesc {
+  margin: 0 0 0.9rem;
   font-family: var(--font-family-body);
   color: var(--softTextColor);
+  font-size: var(--font-size-sm-plus);
   line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
-  .documentationContainer {
-    margin: 5rem var(--pagePaddingMobile) 0;
+  .docsGrid {
+    grid-template-columns: 1fr;
   }
 }

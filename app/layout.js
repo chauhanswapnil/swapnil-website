@@ -1,9 +1,10 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import Script from "next/script";
 
+import CommandPalette from "../src/components/CommandPalette";
 import Footer from "../src/components/Footer";
 import Navbar from "../src/components/Navbar";
+import { buildSearchIndex } from "../src/content/searchIndex";
 
 export const metadata = {
   metadataBase: new URL("https://swapnilchauhan.com"),
@@ -28,6 +29,9 @@ export const metadata = {
   publisher: "Swapnil Chauhan",
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Swapnil Chauhan" }],
+    },
   },
   robots: {
     index: true,
@@ -109,6 +113,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <CommandPalette index={buildSearchIndex()} />
       </body>
     </html>
   );

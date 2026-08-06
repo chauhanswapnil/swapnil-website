@@ -1,0 +1,50 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--borderSubtle);
+  border-radius: 999px;
+  background: var(--subtleSurface);
+  color: var(--mutedTextColor);
+  padding: 0.4rem 0.75rem 0.4rem 0.7rem;
+  font: inherit;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--borderStrongHover);
+  background: var(--subtleSurfaceHover);
+  color: var(--mainTextColor);
+}
+
+.icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: none;
+}
+
+.shortcut {
+  padding: 0.05rem 0.35rem;
+  border: 1px solid var(--borderSubtle);
+  border-radius: 0.3rem;
+  font-family: var(--font-family-mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 900px) {
+  .label,
+  .shortcut {
+    display: none;
+  }
+
+  .button {
+    padding: 0.45rem 0.6rem;
+  }
+}

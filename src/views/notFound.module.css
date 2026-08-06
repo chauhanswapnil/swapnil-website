@@ -1,0 +1,102 @@
+.page {
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+  max-width: 52rem;
+}
+
+.code {
+  margin: 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.3em;
+  color: var(--accentColor);
+}
+
+.title {
+  margin: 1rem 0 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-page-title);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  margin: 1.1rem 0 0;
+  max-width: 34rem;
+  color: var(--softTextColor);
+  font-size: var(--font-size-body-lg);
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 0;
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.15rem 1.35rem;
+  text-decoration: none;
+}
+
+.cardLabel {
+  color: var(--mainTextColor);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-md);
+}
+
+.cardNote {
+  color: var(--mutedTextColor);
+  font-size: var(--font-size-sm);
+}
+
+.recent {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--borderSubtle);
+}
+
+.recentTitle {
+  margin: 0 0 1rem;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
+}
+
+.recentList {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recentList li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.recentMeta {
+  color: var(--mutedTextColor);
+  font-size: var(--font-size-xs);
+}
+
+@media only screen and (max-width: 720px) {
+  .page {
+    padding-top: 3rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

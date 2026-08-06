@@ -1,44 +1,110 @@
 import BlogPreview from "../components/BlogPreview";
+import LoxTerminal from "../components/LoxTerminal";
+import ProjectCard from "../components/ProjectCard";
+import ShortcutHint from "../components/ShortcutHint";
 import TrackedLink from "../components/TrackedLink";
+import { currently, heroProgram, site } from "../content/site";
 import styles from "./home.module.css";
 
-export default function Home({ featuredPosts }) {
+export default function Home({ featuredPosts, featuredProjects }) {
   return (
     <div className={`pageShell ${styles.page}`}>
-        <h1 className="srOnly">Swapnil Chauhan, backend software engineer</h1>
-        <p className={styles.secondaryText}>
-          I’m a backend software engineer with a deep love for programming languages. You could say I’m on a never-ending quest to find the perfect syntax, or at least the one that sparks the most joy. Whether it’s the memory safety of Rust or the simplicity of Go, I’m always eager to dive into something new and add another language to my growing collection.
-        </p>
-
-        <div className={styles.loxContainer}>
-          <h2 className="sectionTitle">
-            <TrackedLink
-              href="/playground"
-              style={{ color: "inherit" }}
-              eventName="content_link_click"
-              eventParams={{ location: "home", link_type: "playground", target_url: "/playground" }}
-            >
-              Lox Playground
-            </TrackedLink>
-          </h2>
-          <p>
-            Check out Lox playground which is an online repl for the interpreter
-            I made in Java for Lox Language.
+      <section className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <p className={`${styles.eyebrow} mutedText`}>
+            Backend engineer <span aria-hidden="true">·</span> London → the Bay
+            Area
           </p>
-        </div>
+          <h1 className={styles.name}>{site.name}</h1>
+          <p className={styles.lead}>{site.tagline}</p>
 
-        <div className={styles.sections}>
-          <div className={styles.sectionHeader}>
-            <h2 className="sectionTitle">I write sometimes</h2>
+          <div className={styles.ctaRow}>
             <TrackedLink
               href="/blog"
-              className={styles.sectionLink}
+              className={styles.primaryCta}
               eventName="content_link_click"
-              eventParams={{ location: "home", link_type: "blog_archive", target_url: "/blog" }}
+              eventParams={{
+                location: "home_hero",
+                link_type: "blog_archive",
+                target_url: "/blog",
+              }}
             >
-              Browse all posts
+              Read the writing
+            </TrackedLink>
+            <TrackedLink
+              href="/projects"
+              className={styles.ghostCta}
+              eventName="content_link_click"
+              eventParams={{
+                location: "home_hero",
+                link_type: "projects",
+                target_url: "/projects",
+              }}
+            >
+              See what I’ve built
             </TrackedLink>
           </div>
+
+          <ShortcutHint
+            className={styles.shortcutHint}
+            kbdClassName={styles.kbd}
+          />
+        </div>
+
+        <div className={styles.heroTerminal}>
+          <LoxTerminal program={heroProgram} />
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="now-heading">
+        <div className={styles.sectionHeader}>
+          <h2 id="now-heading" className="sectionTitle">
+            Right now
+          </h2>
+        </div>
+        <ul className={styles.nowGrid}>
+          {currently.map((item) => (
+            <li key={item.title} className={`${styles.nowCard} surfaceCard`}>
+              <p className={styles.nowLabel}>{item.label}</p>
+              <h3 className={styles.nowTitle}>{item.title}</h3>
+              <p className={styles.nowBody}>{item.body}</p>
+              <TrackedLink
+                href={item.href}
+                external={item.external}
+                className={`${styles.nowLink} accentLink`}
+                eventName="content_link_click"
+                eventParams={{
+                  location: "home_now",
+                  link_type: item.label.toLowerCase(),
+                  target_url: item.href,
+                }}
+              >
+                {item.linkLabel}
+              </TrackedLink>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className={styles.section} aria-labelledby="writing-heading">
+        <div className={styles.sectionHeader}>
+          <h2 id="writing-heading" className="sectionTitle">
+            I write sometimes
+          </h2>
+          <TrackedLink
+            href="/blog"
+            className={styles.sectionLink}
+            eventName="content_link_click"
+            eventParams={{
+              location: "home",
+              link_type: "blog_archive",
+              target_url: "/blog",
+            }}
+          >
+            Browse all posts →
+          </TrackedLink>
+        </div>
+        <div className={styles.postList}>
           {featuredPosts.map((post) => (
             <BlogPreview
               key={post.slug}
@@ -46,10 +112,37 @@ export default function Home({ featuredPosts }) {
               title={post.title}
               excerpt={post.excerpt}
               slug={post.slug}
+              readingMinutes={post.readingMinutes}
               location="home"
             />
           ))}
         </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="projects-heading">
+        <div className={styles.sectionHeader}>
+          <h2 id="projects-heading" className="sectionTitle">
+            Things I’ve built
+          </h2>
+          <TrackedLink
+            href="/projects"
+            className={styles.sectionLink}
+            eventName="content_link_click"
+            eventParams={{
+              location: "home",
+              link_type: "projects",
+              target_url: "/projects",
+            }}
+          >
+            All projects →
+          </TrackedLink>
+        </div>
+        <div className={styles.projectGrid}>
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
