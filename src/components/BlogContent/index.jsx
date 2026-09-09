@@ -42,6 +42,8 @@ function textFromChildren(children) {
 }
 
 export default function BlogContent({ post, neighbours }) {
+  const hasTableOfContents = post.headings.length >= 3;
+
   // The contents list is built from the raw markdown in blogs.js; the article
   // body is built from rendered React children. Rather than slugify twice and
   // hope the two agree, walk the list blogs.js already produced and hand each
@@ -119,7 +121,11 @@ export default function BlogContent({ post, neighbours }) {
     <div className={styles.mainContainer}>
       <ReadingProgress targetId={ARTICLE_ID} />
 
-      <div className={styles.layout}>
+      <div
+        className={`${styles.layout} ${
+          hasTableOfContents ? "" : styles.layoutWithoutSidebar
+        }`}
+      >
         <article className={styles.blogContainer}>
           <header className={styles.articleHeader}>
             <TrackedLink
@@ -254,9 +260,11 @@ export default function BlogContent({ post, neighbours }) {
           <PostNav neighbours={neighbours} slug={post.slug} />
         </article>
 
-        <aside className={styles.sidebar}>
-          <TableOfContents headings={post.headings} />
-        </aside>
+        {hasTableOfContents ? (
+          <aside className={styles.sidebar}>
+            <TableOfContents headings={post.headings} />
+          </aside>
+        ) : null}
       </div>
     </div>
   );

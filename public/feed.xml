@@ -6,9 +6,16 @@
     <description>Essays, engineering notes, and programming write-ups by Swapnil Chauhan.</description>
     <language>en</language>
     <managingEditor>mail@swapnilchauhan.com (Swapnil Chauhan)</managingEditor>
-    <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
-    <lastBuildDate>Tue, 21 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://swapnilchauhan.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>A note on Hiking</title>
+      <link>https://swapnilchauhan.com/blog/a-note-on-hiking/</link>
+      <guid isPermaLink="true">https://swapnilchauhan.com/blog/a-note-on-hiking/</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Living in California comes with countless places to hike, and I fully intend to make good use of that privilege.</description>
+    </item>
     <item>
       <title>Lessons from three years as a software engineer in London</title>
       <link>https://swapnilchauhan.com/blog/lessons-from-three-years-as-a-software-engineer-in-london/</link>
