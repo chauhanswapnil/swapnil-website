@@ -14,6 +14,10 @@
   padding: 2.5rem var(--pagePaddingMobile) 4rem;
 }
 
+.layoutWithoutSidebar {
+  grid-template-columns: minmax(0, 46rem);
+}
+
 .sidebar {
   min-width: 0;
 }

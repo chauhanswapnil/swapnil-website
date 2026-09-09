@@ -3,7 +3,7 @@ import LoxTerminal from "../components/LoxTerminal";
 import ProjectCard from "../components/ProjectCard";
 import ShortcutHint from "../components/ShortcutHint";
 import TrackedLink from "../components/TrackedLink";
-import { currently, heroProgram, site } from "../content/site";
+import { heroProgram, site } from "../content/site";
 import styles from "./home.module.css";
 
 export default function Home({ featuredPosts, featuredProjects }) {
@@ -54,36 +54,6 @@ export default function Home({ featuredPosts, featuredProjects }) {
         <div className={styles.heroTerminal}>
           <LoxTerminal program={heroProgram} />
         </div>
-      </section>
-
-      <section className={styles.section} aria-labelledby="now-heading">
-        <div className={styles.sectionHeader}>
-          <h2 id="now-heading" className="sectionTitle">
-            Right now
-          </h2>
-        </div>
-        <ul className={styles.nowGrid}>
-          {currently.map((item) => (
-            <li key={item.title} className={`${styles.nowCard} surfaceCard`}>
-              <p className={styles.nowLabel}>{item.label}</p>
-              <h3 className={styles.nowTitle}>{item.title}</h3>
-              <p className={styles.nowBody}>{item.body}</p>
-              <TrackedLink
-                href={item.href}
-                external={item.external}
-                className={`${styles.nowLink} accentLink`}
-                eventName="content_link_click"
-                eventParams={{
-                  location: "home_now",
-                  link_type: item.label.toLowerCase(),
-                  target_url: item.href,
-                }}
-              >
-                {item.linkLabel}
-              </TrackedLink>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className={styles.section} aria-labelledby="writing-heading">
