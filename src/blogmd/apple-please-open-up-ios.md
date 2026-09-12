@@ -1,6 +1,6 @@
 ---
 title: "Apple, please open up iOS"
-date: "2026-09-11"
+date: "2026-09-12"
 description: "Apple makes incredible hardware. I want an iPhone I can shape with agents, without waiting for the next major iOS release."
 slug: "apple-please-open-up-ios"
 featured: true
