@@ -227,6 +227,14 @@
   background: var(--ac-bg-1);
 }
 
+.secondaryAction svg {
+  transition: transform 160ms var(--ac-ease);
+}
+
+.secondaryAction:hover svg {
+  transform: translateX(3px);
+}
+
 .secondaryAction:hover {
   border-color: var(--ac-line-3);
   background: var(--ac-bg-2);
@@ -340,9 +348,73 @@
   height: auto;
 }
 
-.heroShot {
+.heroStage {
   max-width: 72rem;
   margin-inline: auto;
+}
+
+/* Session timeline above the hero screenshot. Without motion the playhead
+   rests partway through. */
+
+.timeline {
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.25rem 0;
+}
+
+.timelineTrack {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 0.55rem;
+}
+
+.timelineTrack > span[data-kind] {
+  flex-basis: 0;
+  border-radius: 2px;
+  background: var(--ac-kind-agent);
+}
+
+.timelineTrack > span[data-kind="you"] {
+  background: var(--ac-kind-you);
+}
+
+.timelineTrack > span[data-kind="change"] {
+  background: var(--ac-kind-change);
+}
+
+.timelineTrack > span[data-kind="look"] {
+  background: var(--ac-kind-look);
+}
+
+.timelineUnplayed {
+  position: absolute;
+  inset: -1px -1px -1px 0;
+  background: color-mix(in srgb, var(--ac-bg-0) 65%, transparent);
+  transform: scaleX(0.38);
+  transform-origin: right;
+}
+
+.timelinePlayhead {
+  position: absolute;
+  top: -0.35rem;
+  bottom: -0.35rem;
+  left: 62%;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--ac-text-1);
+}
+
+.timelinePlayhead::before {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--ac-text-1);
+  content: "";
+  transform: translateX(-50%);
 }
 
 /* Principles strip */
@@ -479,37 +551,66 @@
 }
 
 .showcaseTabs {
+  position: relative;
   display: grid;
   gap: 0.35rem;
 }
 
 .showcaseTab {
+  position: relative;
   display: grid;
-  gap: 0.35rem;
   width: 100%;
   padding: 1rem 1.1rem;
-  border: 1px solid transparent;
+  overflow: hidden;
+  border: 0;
   border-radius: 0.7rem;
   color: var(--ac-text-2);
   background: transparent;
   font: inherit;
   text-align: left;
   cursor: pointer;
+  isolation: isolate;
+  transition: color 300ms var(--ac-ease);
+}
+
+/* The open tab's card fades in on its own layer, so moving between tabs
+   cross-fades instead of jumping. */
+.showcaseTab::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid var(--ac-line-2);
+  border-radius: inherit;
+  background: var(--ac-bg-2);
+  content: "";
+  opacity: 0;
+  transform: scale(0.98);
   transition:
-    background-color 160ms var(--ac-ease),
-    border-color 160ms var(--ac-ease),
-    color 160ms var(--ac-ease);
+    opacity 300ms var(--ac-ease),
+    transform 300ms var(--ac-ease),
+    background-color 200ms var(--ac-ease);
 }
 
 .showcaseTab:hover {
   color: var(--ac-text-1);
+}
+
+.showcaseTab:hover::before {
+  border-color: transparent;
   background: var(--ac-bg-1);
+  opacity: 1;
+  transform: none;
 }
 
 .showcaseTab[aria-selected="true"] {
-  border-color: var(--ac-line-2);
   color: var(--ac-text-1);
+}
+
+.showcaseTab[aria-selected="true"]::before {
+  border-color: var(--ac-line-2);
   background: var(--ac-bg-2);
+  opacity: 1;
+  transform: none;
 }
 
 .showcaseTabTitle {
@@ -520,16 +621,70 @@
   font-size: 1.02rem;
 }
 
+/* Opens and closes by height: the row grows from 0fr to 1fr. */
 .showcaseTabBody {
-  display: none;
+  display: grid;
+  grid-template-rows: 0fr;
   padding-left: 1.15rem;
   color: var(--ac-text-2);
   font-size: 0.93rem;
   line-height: 1.55;
+  opacity: 0;
+  transition:
+    grid-template-rows 380ms var(--ac-ease),
+    opacity 240ms var(--ac-ease);
+}
+
+.showcaseTabBody > span {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .showcaseTab[aria-selected="true"] .showcaseTabBody {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition:
+    grid-template-rows 380ms var(--ac-ease),
+    opacity 300ms 120ms var(--ac-ease);
+}
+
+.showcaseTabBody > span::before {
   display: block;
+  height: 0.4rem;
+  content: "";
+}
+
+.showcaseProgress {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0;
+  left: 1.1rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ac-kind-agent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation-name: progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.showcaseProgress[data-kind="you"] {
+  background: var(--ac-kind-you);
+}
+
+.showcaseProgress[data-kind="change"] {
+  background: var(--ac-kind-change);
+}
+
+.showcaseProgress[data-kind="look"] {
+  background: var(--ac-kind-look);
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .kindDot {
@@ -538,6 +693,11 @@
   height: 0.55rem;
   border-radius: 2px;
   background: var(--ac-kind-agent);
+  transition: transform 300ms var(--ac-ease);
+}
+
+.showcaseTab[aria-selected="true"] .kindDot {
+  transform: scale(1.25);
 }
 
 .kindDot[data-kind="you"] {
@@ -559,15 +719,34 @@
   line-height: 1.6;
 }
 
-.showcasePanel:not([hidden]) {
-  animation: panelIn 260ms var(--ac-ease);
+/* Every panel sits in the same grid cell; the open one fades and settles
+   in over the last. Closed panels keep their layout box, so their lazy
+   screenshots load before anyone asks for them. */
+.showcasePanels {
+  display: grid;
 }
 
-@keyframes panelIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
+.showcasePanel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.985);
+  transform-origin: 50% 0;
+  transition:
+    opacity 320ms var(--ac-ease),
+    transform 520ms var(--ac-ease),
+    visibility 0s linear 520ms;
+}
+
+.showcasePanel[data-active="true"] {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 420ms var(--ac-ease),
+    transform 520ms var(--ac-ease),
+    visibility 0s;
 }
 
 /* Safety */
@@ -604,6 +783,11 @@
   border: 1px solid var(--ac-line-2);
   border-radius: 0.8rem;
   background: var(--ac-bg-1);
+  transition: border-color 160ms var(--ac-ease);
+}
+
+.card:hover {
+  border-color: var(--ac-line-3);
 }
 
 .moreGrid {
@@ -781,8 +965,14 @@
     padding: 0.55rem 0.9rem;
   }
 
+  .showcaseTabBody,
   .showcaseTab[aria-selected="true"] .showcaseTabBody {
     display: none;
+  }
+
+  .showcaseProgress {
+    right: 0.9rem;
+    left: 0.9rem;
   }
 
   .panelBody {
@@ -821,10 +1011,128 @@
   }
 }
 
+/* Motion. Everything below runs only for people who have not asked for
+   reduced motion; the page reads the same without it. */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes play {
+  from {
+    left: 0%;
+  }
+  88%,
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes unplay {
+  from {
+    transform: scaleX(1);
+  }
+  88%,
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes flatten {
+  from {
+    transform: perspective(2200px) rotateX(14deg) scale(0.95);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .heroCopy > * {
+    animation: rise 800ms var(--ac-ease) both;
+  }
+
+  .heroCopy > :nth-child(2) {
+    animation-delay: 70ms;
+  }
+
+  .heroCopy > :nth-child(3) {
+    animation-delay: 140ms;
+  }
+
+  .heroCopy > :nth-child(4) {
+    animation-delay: 210ms;
+  }
+
+  .heroCopy > :nth-child(5) {
+    animation-delay: 280ms;
+  }
+
+  .heroStage {
+    animation: rise 1100ms 320ms var(--ac-ease) both;
+  }
+
+  .timelinePlayhead {
+    animation: play 12s 1.2s linear infinite both;
+  }
+
+  .timelineUnplayed {
+    animation: unplay 12s 1.2s linear infinite both;
+  }
+
+  /* The hero screenshot starts tipped back and lies flat as you scroll. */
+  @supports (animation-timeline: scroll()) {
+    .heroShot {
+      transform-origin: 50% 0;
+      animation: flatten linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 55vh;
+    }
+  }
+
+  /* Blocks rise into place as they scroll into view. Browsers without
+     scroll-driven animations just show them. */
+  @supports (animation-timeline: view()) {
+    .sectionHeading,
+    .wideShot,
+    .showcase,
+    .replayNotes > div,
+    .safetyGrid > *,
+    .card,
+    .moreGrid li,
+    .principles li,
+    .privacyInner,
+    .privacyList li,
+    .installInner > *,
+    .final img,
+    .final h2,
+    .final p {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .recDot,
-  .showcasePanel:not([hidden]) {
+  .recDot {
     animation: none;
+  }
+
+  .showcaseTab::before,
+  .showcaseTabBody,
+  .showcaseTab[aria-selected="true"] .showcaseTabBody,
+  .showcasePanel,
+  .showcasePanel[data-active="true"],
+  .kindDot {
+    transition: none;
   }
 
   .primaryAction,

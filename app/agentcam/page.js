@@ -219,6 +219,28 @@ const KEYS = [
   ["R", "next risk"],
 ];
 
+// The strip above the hero screenshot: one session's steps, colored by kind,
+// with a playhead sweeping across. Widths are shares of the strip.
+const TIMELINE = [
+  ["agent", 4], ["you", 4], ["agent", 9], ["agent", 4], ["look", 5], ["look", 5],
+  ["look", 7], ["look", 5], ["look", 6], ["change", 4], ["change", 4], ["agent", 5],
+  ["change", 7], ["agent", 5], ["change", 10], ["look", 7], ["agent", 3],
+];
+
+function SessionTimeline() {
+  return (
+    <div className={styles.timeline} aria-hidden="true">
+      <div className={styles.timelineTrack}>
+        {TIMELINE.map(([kind, width], index) => (
+          <span key={index} data-kind={kind} style={{ flexGrow: width }} />
+        ))}
+        <span className={styles.timelineUnplayed} />
+        <span className={styles.timelinePlayhead} />
+      </div>
+    </div>
+  );
+}
+
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20">
@@ -289,17 +311,20 @@ export default function AgentcamPage() {
             </ul>
           </div>
 
-          <BrowserFrame path="/" className={styles.heroShot}>
-            <Image
-              src="/agentcam/overview.png"
-              alt="agentcam overview: agent time, a year of activity, sessions and projects"
-              width={1920}
-              height={1280}
-              priority
-              sizes="(max-width: 960px) 92vw, 80rem"
-              className={styles.shot}
-            />
-          </BrowserFrame>
+          <div className={styles.heroStage}>
+            <SessionTimeline />
+            <BrowserFrame path="/" className={styles.heroShot}>
+              <Image
+                src="/agentcam/overview.png"
+                alt="agentcam overview: agent time, a year of activity, sessions and projects"
+                width={1920}
+                height={1280}
+                priority
+                sizes="(max-width: 960px) 92vw, 80rem"
+                className={styles.shot}
+              />
+            </BrowserFrame>
+          </div>
         </div>
       </section>
 
