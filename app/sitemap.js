@@ -31,6 +31,12 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/agentcam`,
+      lastModified: new Date("2026-11-09"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/orion`,
       lastModified: new Date("2026-08-03"),
       changeFrequency: "monthly",

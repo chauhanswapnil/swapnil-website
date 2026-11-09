@@ -9,6 +9,16 @@ export const projectsPageCopy = {
 
 export const featuredProjects = [
   {
+    slug: "agentcam",
+    title: "agentcam",
+    hook: "A dashcam for your coding agents.",
+    summary:
+      "agentcam reads the session logs Claude Code and Codex already write and shows what your agents did: step-by-step replays, full-text search, which agent-written lines are still in the code, and a risk audit. One local Rust binary with an embedded React UI. Nothing leaves your machine.",
+    tech: ["Rust", "React", "SQLite", "AI agents"],
+    githubUrl: "https://github.com/chauhanswapnil/agentcam",
+    demoUrl: "/agentcam",
+  },
+  {
     slug: "orion",
     title: "Orion",
     hook: "A running app for iOS, built on Apple Health.",

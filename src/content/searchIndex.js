@@ -37,6 +37,14 @@ const STATIC_PAGES = [
     href: "/playground",
     keywords: ["lox", "repl", "interpreter", "editor", "run"],
   },
+  {
+    id: "page-agentcam",
+    kind: "page",
+    title: "agentcam",
+    subtitle: "A dashcam for your coding agents",
+    href: "/agentcam",
+    keywords: ["claude code", "codex", "agents", "logs", "replay", "rust"],
+  },
 ];
 
 const LINKS = [
