@@ -37,14 +37,14 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/orion`,
-      lastModified: new Date("2026-08-03"),
+      url: `${SITE_URL}/runrecount`,
+      lastModified: new Date("2026-11-11"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/orion/privacy_policy`,
-      lastModified: new Date("2026-08-03"),
+      url: `${SITE_URL}/runrecount/privacy_policy`,
+      lastModified: new Date("2026-11-11"),
       changeFrequency: "yearly",
       priority: 0.3,
     },

@@ -5,6 +5,18 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/orion",
+        "destination": "/runrecount",
+        "type": 301
+      },
+      {
+        "source": "/orion/:path*",
+        "destination": "/runrecount/:path",
+        "type": 301
+      }
     ]
   }
 }

@@ -19,13 +19,13 @@ export const featuredProjects = [
     demoUrl: "/agentcam",
   },
   {
-    slug: "orion",
-    title: "Orion",
-    hook: "A running app for iOS, built on Apple Health.",
+    slug: "runrecount",
+    title: "RunRecount",
+    hook: "Runs, hikes, and walks from Apple Health, in one iPhone app.",
     summary:
-      "Orion reads your runs straight from HealthKit and turns them into routes, splits, streaks, records, and training analytics — VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
+      "RunRecount reads your runs, hikes, and walks from HealthKit and turns them into routes, splits, streaks, records, and training analytics — VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
     tech: ["Swift", "SwiftUI", "SwiftData", "iOS", "HealthKit"],
-    demoUrl: "/orion",
+    demoUrl: "/runrecount",
   },
   {
     slug: "vidpress",

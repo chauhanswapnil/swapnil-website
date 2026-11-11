@@ -1,0 +1,134 @@
+.page {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.article {
+  max-width: 48rem;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--borderSubtle);
+}
+
+.productName {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-family-body-strong);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-article-title);
+  line-height: 1.05;
+}
+
+.lead {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  font-size: var(--font-size-body-lg);
+  line-height: 1.7;
+}
+
+.updated {
+  margin: 1rem 0 0;
+  font-size: var(--font-size-sm);
+}
+
+.summary {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--borderSubtle);
+  border-radius: var(--radiusCard);
+  background: var(--subtleSurface);
+}
+
+.article section {
+  margin-top: 2.75rem;
+}
+
+.article h2,
+.article h3 {
+  color: var(--mainTextColor);
+  font-family: var(--font-family-heading);
+}
+
+.article h2,
+.summary h2 {
+  margin: 0 0 1rem;
+  font-size: var(--font-size-lg);
+  line-height: 1.25;
+}
+
+.article h3 {
+  margin: 1.75rem 0 0.65rem;
+  font-size: var(--font-size-md);
+}
+
+.article p,
+.article li,
+.summary p {
+  color: var(--softTextColor);
+  font-size: var(--font-size-body);
+  line-height: 1.75;
+}
+
+.article p,
+.summary p {
+  margin: 0 0 1rem;
+}
+
+.summary p:last-child,
+.article section p:last-child {
+  margin-bottom: 0;
+}
+
+.article ul {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.article li + li {
+  margin-top: 0.45rem;
+}
+
+.article strong {
+  color: var(--mainTextColor);
+  font-family: var(--font-family-body-strong);
+  font-weight: normal;
+}
+
+.article a {
+  color: var(--accentColor);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.article a:hover {
+  color: var(--accentColorHover);
+}
+
+@media only screen and (max-width: 1024px) {
+  .page {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .summary {
+    margin-bottom: 2.5rem;
+    padding: 1.25rem;
+  }
+
+  .article section {
+    margin-top: 2.25rem;
+  }
+}
