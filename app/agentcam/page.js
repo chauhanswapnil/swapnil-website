@@ -7,7 +7,7 @@ import styles from "./agentcam.module.css";
 
 const REPO_URL = "https://github.com/chauhanswapnil/agentcam";
 
-const TITLE = "agentcam — A dashcam for your coding agents";
+const TITLE = "agentcam - A dashcam for your coding agents";
 const DESCRIPTION =
   "agentcam reads the logs Claude Code and Codex already write and shows you what your agents did: replays, search, what lasted, and a risk audit. Local, open source, one binary.";
 

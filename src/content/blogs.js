@@ -32,8 +32,8 @@ function countWords(markdown) {
 // contents list. Fenced code blocks are skipped so a shell comment like
 // `## build` never turns into a heading.
 //
-// Posts do not agree on a starting level — some open sections with h3,
-// others with h4 — so depth is measured relative to the shallowest heading
+// Posts do not agree on a starting level - some open sections with h3,
+// others with h4 - so depth is measured relative to the shallowest heading
 // in the post rather than assumed to be h2.
 function extractHeadings(markdown) {
   const seen = new Map();

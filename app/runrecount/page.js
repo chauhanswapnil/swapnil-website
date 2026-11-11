@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./orion.module.css";
 
 export const metadata = {
-  title: "RunRecount — Runs, hikes, and walks in one place",
+  title: "RunRecount - Runs, hikes, and walks in one place",
   description:
     "RunRecount brings runs, hikes, walks, recovery, routes, and progress into one private iPhone app.",
   alternates: {
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://swapnilchauhan.com/runrecount",
-    title: "RunRecount — Runs, hikes, and walks in one place",
+    title: "RunRecount - Runs, hikes, and walks in one place",
     description:
       "Runs, hikes, walks, recovery, and progress in one private iPhone app.",
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "RunRecount — Runs, hikes, and walks in one place",
+    title: "RunRecount - Runs, hikes, and walks in one place",
     description:
       "Runs, hikes, walks, recovery, and progress in one private iPhone app.",
     images: ["/runrecount/app-icon.png"],
@@ -161,7 +161,7 @@ export default function RunRecountPage() {
             <p className={styles.eyebrow}>Progress without the noise</p>
             <h2 id="stats-title">See your progress add up.</h2>
             <p>
-              Clear trends make the work visible—without turning every run into
+              Clear trends make the work visible-without turning every run into
               a spreadsheet.
             </p>
             <ul className={styles.statList}>

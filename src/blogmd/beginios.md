@@ -29,9 +29,9 @@ With the increasing number of things we can do from our mobile devices the job m
 
 #### For starting out:
 
-*   **The Swift Programming Language by Apple** ([Link](https://docs.swift.org/swift-book/)) — This is the official book by Apple and is a must read resource for anyone starting with Swift. You don’t need a prior programming experience. You can read this and make Swift your first programming language.
-*   **Stanford CS193P by Paul Hegarty** ([Link](https://youtube.com/playlist?list=PLpGHT1n4-mAsxuRxVPv7kj4-dQYoC3VVu)) — This is an amazing resource to learn about quite a lot of Swift and XCode. You will need prior experience in programming in some language to be able to follow along properly.
-*   **iOS & Swift -The Complete iOS App Development Bootcamp by Dr. Angela Yu** ([Link](http://iOS & Swift - The Complete iOS App Development Bootcamp)) — This course is designed to take you from the very beginner to a basic iOS Developer. It will teach you everything from the basics of Swift, Storyboards, SwiftUI, CoreData, Firebase, In-App Purchases and much more. Through this course you will learn all the basic stuff and get a taste of the more advanced stuff.
+*   **The Swift Programming Language by Apple** ([Link](https://docs.swift.org/swift-book/)) - This is the official book by Apple and is a must read resource for anyone starting with Swift. You don’t need a prior programming experience. You can read this and make Swift your first programming language.
+*   **Stanford CS193P by Paul Hegarty** ([Link](https://youtube.com/playlist?list=PLpGHT1n4-mAsxuRxVPv7kj4-dQYoC3VVu)) - This is an amazing resource to learn about quite a lot of Swift and XCode. You will need prior experience in programming in some language to be able to follow along properly.
+*   **iOS & Swift -The Complete iOS App Development Bootcamp by Dr. Angela Yu** ([Link](http://iOS & Swift - The Complete iOS App Development Bootcamp)) - This course is designed to take you from the very beginner to a basic iOS Developer. It will teach you everything from the basics of Swift, Storyboards, SwiftUI, CoreData, Firebase, In-App Purchases and much more. Through this course you will learn all the basic stuff and get a taste of the more advanced stuff.
 
 #### For intermediate level:
 
@@ -44,10 +44,10 @@ At this point you should also start looking into Unit testing and UI testing for
 That being said below are some learning resources you can use:
 
 *   iOS Unit Testing and UI Testing by Ray Wenderlich ([Link](https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial))
-*   Ray Wenderlich Tutorials ([Link](https://www.raywenderlich.com/ios/articles)) — They have a lot of articles on a variety of topics ranging from beginner to advance. They are very active and keep on adding new articles.
-*   Sean Allen on YouTube ([Link](https://www.youtube.com/c/SeanAllen/videos)) — One of the best iOS Development YouTuber.
-*   Lets Build That App ([Link](https://www.youtube.com/c/LetsBuildThatApp/videos)) — He has many tutorials on intermediate and advanced topics.
-*   Brian Advent ([Link](https://www.youtube.com/c/BrianAdvent/videos)) — Good resource for learning animations in Swift.
+*   Ray Wenderlich Tutorials ([Link](https://www.raywenderlich.com/ios/articles)) - They have a lot of articles on a variety of topics ranging from beginner to advance. They are very active and keep on adding new articles.
+*   Sean Allen on YouTube ([Link](https://www.youtube.com/c/SeanAllen/videos)) - One of the best iOS Development YouTuber.
+*   Lets Build That App ([Link](https://www.youtube.com/c/LetsBuildThatApp/videos)) - He has many tutorials on intermediate and advanced topics.
+*   Brian Advent ([Link](https://www.youtube.com/c/BrianAdvent/videos)) - Good resource for learning animations in Swift.
 
 #### For advance Level:
 
@@ -68,8 +68,8 @@ iOS App Development Roadmap ([Link](https://awesomeopensource.com/project/godrm/
 
 #### Follow Latest Swift and iOS News and Developments:
 
-*   Swift by Sundell for latest swift news — [https://www.swiftbysundell.com](https://www.swiftbysundell.com)
-*   Podcast by Swift by Sundell — [https://www.swiftbysundell.com/podcast/](https://www.swiftbysundell.com/podcast/)
+*   Swift by Sundell for latest swift news - [https://www.swiftbysundell.com](https://www.swiftbysundell.com)
+*   Podcast by Swift by Sundell - [https://www.swiftbysundell.com/podcast/](https://www.swiftbysundell.com/podcast/)
 *   [https://www.hackingwithswift.com/articles/230/how-to-become-an-ios-developer](https://www.hackingwithswift.com/articles/230/how-to-become-an-ios-developer)
 *   [https://designcode.io/tutorials](https://designcode.io/tutorials)
 *   [https://forums.swift.org](https://forums.swift.org)

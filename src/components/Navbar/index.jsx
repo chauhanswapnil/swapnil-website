@@ -4,7 +4,7 @@ import TrackedLink from "../TrackedLink";
 import styles from "./index.module.css";
 
 // The narrowest phones cannot fit all three links beside the search and
-// theme controls. Playground drops out there — the homepage links to it and
+// theme controls. Playground drops out there - the homepage links to it and
 // so does the search palette.
 const LINKS = [
   { href: "/blog", label: "Blog", type: "blog" },

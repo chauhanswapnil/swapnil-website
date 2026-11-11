@@ -69,7 +69,7 @@ Run this code and we have connected Google Colab with our Kaggle Account.
 
 ### Downloading the Dataset and loading it into Pandas Dataframe
 
-Let’s first join the competiton. You can do this by going to kaggle.com/competions and search Titanic — Machine Learning by Disaster and join that competition. You can read about the competition and look at the dataset directly on the kaggle website.
+Let’s first join the competiton. You can do this by going to kaggle.com/competions and search Titanic - Machine Learning by Disaster and join that competition. You can read about the competition and look at the dataset directly on the kaggle website.
 
 Now come back to colab and let’s download our dataset.
 

@@ -23,7 +23,7 @@ export const heroProgram = {
   }
 
   pitch() {
-    print this.name + " — " + this.why;
+    print this.name + " - " + this.why;
   }
 }
 
@@ -33,7 +33,7 @@ shelf.pitch();
 var go = Language("Go", "simplicity that scales");
 go.pitch();`,
   output: [
-    "Rust — memory safety without a collector",
-    "Go — simplicity that scales",
+    "Rust - memory safety without a collector",
+    "Go - simplicity that scales",
   ],
 };

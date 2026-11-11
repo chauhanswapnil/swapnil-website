@@ -1,6 +1,6 @@
 // Markdown helpers shared by the site and the feed script. Kept free of any
 // Next or React import so the plain Node scripts under scripts/ can use it
-// too — src/content/blogs.js is server-only and cannot be imported there.
+// too - src/content/blogs.js is server-only and cannot be imported there.
 
 export function stripMarkdown(markdown) {
   return markdown

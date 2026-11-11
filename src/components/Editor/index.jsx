@@ -19,7 +19,7 @@ const RUN_TIMEOUT_MS = 15000;
 
 // Browsers and servers start dropping URLs somewhere above 2000 characters, and
 // base64 adds a third on top of the source. Refuse to build a link that would
-// arrive truncated — a truncated program is worse than no link.
+// arrive truncated - a truncated program is worse than no link.
 const MAX_SHARE_URL = 2000;
 
 // Programs travel in the URL fragment so a link carries the code with it
@@ -94,7 +94,7 @@ export default function Editor() {
       setOutput(result.trim() || "The program finished without printing anything.");
       setStatus("success");
     } catch {
-      // Either the request never landed — server down, network blocked it — or
+      // Either the request never landed - server down, network blocked it - or
       // it landed and the answer never came and the timeout fired. Both leave
       // the reader in the same place, so both read the same way.
       setStatus("offline");
@@ -241,7 +241,7 @@ export default function Editor() {
                 <p className={styles.offlineBody}>
                   This playground sends your code to a Java service that runs the
                   Lox interpreter, and that service is not reachable right now.
-                  Your code is safe — use Copy link to keep it and try again
+                  Your code is safe - use Copy link to keep it and try again
                   later.
                 </p>
                 <TrackedLink

@@ -49,7 +49,7 @@ function fuzzyScore(query, text) {
       score += 1;
     }
 
-    if (found === 0 || /[\s\-–—/·.]/.test(haystack[found - 1])) {
+    if (found === 0 || /[\s\-–\u2014/·.]/.test(haystack[found - 1])) {
       score += 8;
     }
 
@@ -189,7 +189,7 @@ export default function CommandPalette({ index = [] }) {
         return;
       }
 
-      // Bare "/" only. With a modifier held it belongs to the browser —
+      // Bare "/" only. With a modifier held it belongs to the browser -
       // Ctrl+/ and Cmd+/ are bound to other things in several of them.
       const bareKey =
         !event.metaKey && !event.ctrlKey && !event.altKey;
@@ -258,7 +258,7 @@ export default function CommandPalette({ index = [] }) {
       return;
     }
 
-    // The input is the only focusable thing in here — the rows are listbox
+    // The input is the only focusable thing in here - the rows are listbox
     // options driven from the input, per the combobox pattern. So Tab has
     // nowhere legitimate to go, and letting it through would walk focus out
     // into the page behind a dialog marked aria-modal.

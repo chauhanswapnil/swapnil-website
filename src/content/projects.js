@@ -23,7 +23,7 @@ export const featuredProjects = [
     title: "RunRecount",
     hook: "Runs, hikes, and walks from Apple Health, in one iPhone app.",
     summary:
-      "RunRecount reads your runs, hikes, and walks from HealthKit and turns them into routes, splits, streaks, records, and training analytics — VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
+      "RunRecount reads your runs, hikes, and walks from HealthKit and turns them into routes, splits, streaks, records, and training analytics - VO₂max trends, training load, heart rate zones, cadence, and a map that renders where you run as a heat corridor. Everything is computed and stored on the device.",
     tech: ["Swift", "SwiftUI", "SwiftData", "iOS", "HealthKit"],
     demoUrl: "/runrecount",
   },
